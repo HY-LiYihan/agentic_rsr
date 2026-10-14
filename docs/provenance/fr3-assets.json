@@ -1,0 +1,1433 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "local_repository": "HY-LiYihan/robot_control",
+  "local_commit": "6016dd5f20d2146a28e425ce77dfb9430f1173",
+  "method": "Git tree blob hashes only; no upstream meshes downloaded; CRLF-to-LF transformations computed from fixed local Git blobs",
+  "upstreams": [
+    {
+      "repository": "google-deepmind/mujoco_menagerie",
+      "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+      "commit_date": "2026-10-07T20:07:25Z",
+      "tree_sha": "693a847fb65ac42afdd9c8c820fd06ebd5e1d33b",
+      "tree_response_sha": "693a847fb65ac42afdd9c8c820fd06ebd5e1d33b",
+      "truncated": false,
+      "entries": 3430
+    },
+    {
+      "repository": "kyokochi/mujoco-model",
+      "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+      "commit_date": "2024-04-24T01:39:11Z",
+      "tree_sha": "9e5e1583490bb1a613b681cf603cf13c9a27d7a7",
+      "tree_response_sha": "9e5e1583490bb1a613b681cf603cf13c9a27d7a7",
+      "truncated": false,
+      "entries": 1026
+    }
+  ],
+  "assets": [
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f17b8b69ef8c3075754844fbeeb14c8e66e083c",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/FR3_D435i_mount.obj",
+      "bytes": 228627,
+      "lf_normalized_sha": null,
+      "matches": []
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c61f6d861a21c6e29ebb44aae74684991ee7c94e",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/d435_official.obj",
+      "bytes": 10513461,
+      "lf_normalized_sha": null,
+      "matches": []
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e9e097d8ed12773578b3e8c3232cff4c7e8fba3",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/d435i_0.obj",
+      "bytes": 47570,
+      "lf_normalized_sha": "2b5d9c74ec3efcbd4ba31f374be5553647de0c5e",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "realsense_d435i/assets/d435i_0.obj",
+          "blob_sha": "2b5d9c74ec3efcbd4ba31f374be5553647de0c5e",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "realsense_d435i/assets/d435i_0.obj",
+          "blob_sha": "2b5d9c74ec3efcbd4ba31f374be5553647de0c5e",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3951f7312a1191c08277e570c75353fcc9b6b42",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/d435i_1.obj",
+      "bytes": 270788,
+      "lf_normalized_sha": "f9af9ee7bd02de80e297b0b8808983d096abe18d",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "realsense_d435i/assets/d435i_1.obj",
+          "blob_sha": "f9af9ee7bd02de80e297b0b8808983d096abe18d",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "realsense_d435i/assets/d435i_1.obj",
+          "blob_sha": "f9af9ee7bd02de80e297b0b8808983d096abe18d",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59c2f580a3b93b41fcf6349e8627220a914cdd21",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/d435i_2.obj",
+      "bytes": 623205,
+      "lf_normalized_sha": "cdf011e0ab2e46e98a807b53b1b31ec51d9ecc6d",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "realsense_d435i/assets/d435i_2.obj",
+          "blob_sha": "cdf011e0ab2e46e98a807b53b1b31ec51d9ecc6d",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "realsense_d435i/assets/d435i_2.obj",
+          "blob_sha": "cdf011e0ab2e46e98a807b53b1b31ec51d9ecc6d",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19b3cede3be21614a6974ba7cfcc6915fdb89821",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/d435i_3.obj",
+      "bytes": 76834,
+      "lf_normalized_sha": "1fee4acf8f1f53f86cee029d5499c4b5e0c6dc3f",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "realsense_d435i/assets/d435i_3.obj",
+          "blob_sha": "1fee4acf8f1f53f86cee029d5499c4b5e0c6dc3f",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "realsense_d435i/assets/d435i_3.obj",
+          "blob_sha": "1fee4acf8f1f53f86cee029d5499c4b5e0c6dc3f",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f59768dbdc8ec8b1c5ddb216631f9308972afbf",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/d435i_4.obj",
+      "bytes": 11732140,
+      "lf_normalized_sha": "1f71bb357ad2e596248617e26dbaa25954b11158",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "realsense_d435i/assets/d435i_4.obj",
+          "blob_sha": "1f71bb357ad2e596248617e26dbaa25954b11158",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "realsense_d435i/assets/d435i_4.obj",
+          "blob_sha": "1f71bb357ad2e596248617e26dbaa25954b11158",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d69e4a2f4669dbae209f5020f9cd297c58d11d20",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/d435i_5.obj",
+      "bytes": 1050637,
+      "lf_normalized_sha": "54cbad77e8d79786229ff0c90db9208ee68be30e",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "realsense_d435i/assets/d435i_5.obj",
+          "blob_sha": "54cbad77e8d79786229ff0c90db9208ee68be30e",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "realsense_d435i/assets/d435i_5.obj",
+          "blob_sha": "54cbad77e8d79786229ff0c90db9208ee68be30e",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8641d87dca8591cdecb40259df3575e98af6c39c",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/d435i_6.obj",
+      "bytes": 1570438,
+      "lf_normalized_sha": "7bffca4a165074391b0c80dcdf78f8e25aa1f055",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "realsense_d435i/assets/d435i_6.obj",
+          "blob_sha": "7bffca4a165074391b0c80dcdf78f8e25aa1f055",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "realsense_d435i/assets/d435i_6.obj",
+          "blob_sha": "7bffca4a165074391b0c80dcdf78f8e25aa1f055",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae9c07d75ebc4f03dc740f799b9529056b0a4f91",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/d435i_7.obj",
+      "bytes": 150825,
+      "lf_normalized_sha": "5e365a6883061854180280381a967cd3aacbeb8e",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "realsense_d435i/assets/d435i_7.obj",
+          "blob_sha": "5e365a6883061854180280381a967cd3aacbeb8e",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "realsense_d435i/assets/d435i_7.obj",
+          "blob_sha": "5e365a6883061854180280381a967cd3aacbeb8e",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6dda67fed3b3cd087f3ac95a1cc77503e2a8597",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/d435i_8.obj",
+      "bytes": 31673845,
+      "lf_normalized_sha": "6c7bc6cfb34fa4bef32fcb3251cb8df1cb9d362d",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "realsense_d435i/assets/d435i_8.obj",
+          "blob_sha": "6c7bc6cfb34fa4bef32fcb3251cb8df1cb9d362d",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "realsense_d435i/assets/d435i_8.obj",
+          "blob_sha": "6c7bc6cfb34fa4bef32fcb3251cb8df1cb9d362d",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1e9a2ec2abcd2936a74b814d0375532e549a059",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/fr3_finger_0.obj",
+      "bytes": 90360,
+      "lf_normalized_sha": "104cf631a225dad6a0bdc8f5cf31dc994c75216f",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/finger_0.obj",
+          "blob_sha": "104cf631a225dad6a0bdc8f5cf31dc994c75216f",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/finger_0.obj",
+          "blob_sha": "104cf631a225dad6a0bdc8f5cf31dc994c75216f",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a274861b63def879910442766f80ec4441bf6981",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/fr3_finger_1.obj",
+      "bytes": 66487,
+      "lf_normalized_sha": "31364d4804285e0594878adf0972d543453caff1",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/finger_1.obj",
+          "blob_sha": "31364d4804285e0594878adf0972d543453caff1",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/finger_1.obj",
+          "blob_sha": "31364d4804285e0594878adf0972d543453caff1",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5bb18881b89b35e135a314ad6aecdb49c4f62e9",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/fr3_finger_official.obj",
+      "bytes": 71542,
+      "lf_normalized_sha": null,
+      "matches": []
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c5befbb9f767be11455789bf61fce5272657f47",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/fr3_hand_0.obj",
+      "bytes": 9355,
+      "lf_normalized_sha": "d211d88e9235bcf0aef55944c0a4dd442e6043bc",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/hand_0.obj",
+          "blob_sha": "d211d88e9235bcf0aef55944c0a4dd442e6043bc",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/hand_0.obj",
+          "blob_sha": "d211d88e9235bcf0aef55944c0a4dd442e6043bc",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be2177c76b5527c844fb3529198f50468fbc84fe",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/fr3_hand_1.obj",
+      "bytes": 125223,
+      "lf_normalized_sha": "88e32af1cf1e84c6c1a01506481630393b90b8dc",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/hand_1.obj",
+          "blob_sha": "88e32af1cf1e84c6c1a01506481630393b90b8dc",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/hand_1.obj",
+          "blob_sha": "88e32af1cf1e84c6c1a01506481630393b90b8dc",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dea29d967dc03156df610c228e9a28eedd39560d",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/fr3_hand_2.obj",
+      "bytes": 612111,
+      "lf_normalized_sha": "1611d55faf3a901e13e51e499c19d9fff438c7db",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/hand_2.obj",
+          "blob_sha": "1611d55faf3a901e13e51e499c19d9fff438c7db",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/hand_2.obj",
+          "blob_sha": "1611d55faf3a901e13e51e499c19d9fff438c7db",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d37e27a5d073ad27bf2ad04527755aa058c43632",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/fr3_hand_3.obj",
+      "bytes": 926779,
+      "lf_normalized_sha": "3fcd6f303523ad716ae56013a9b06acdd8b413d6",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/hand_3.obj",
+          "blob_sha": "3fcd6f303523ad716ae56013a9b06acdd8b413d6",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/hand_3.obj",
+          "blob_sha": "3fcd6f303523ad716ae56013a9b06acdd8b413d6",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f65b6edca0f5e4ec725ec294825dafe7010d9114",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/fr3_hand_4.obj",
+      "bytes": 156224,
+      "lf_normalized_sha": "0b308459702bf47c8e1a17b60486a6f9c6aa77f2",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/hand_4.obj",
+          "blob_sha": "0b308459702bf47c8e1a17b60486a6f9c6aa77f2",
+          "match": "local_CRLF_to_LF"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/hand_4.obj",
+          "blob_sha": "0b308459702bf47c8e1a17b60486a6f9c6aa77f2",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e820902eba7b9d959a2e0cc8091f4b0f09ed77a",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/fr3_hand_collision.stl",
+      "bytes": 10084,
+      "lf_normalized_sha": null,
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/hand.stl",
+          "blob_sha": "4e820902eba7b9d959a2e0cc8091f4b0f09ed77a",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/hand.stl",
+          "blob_sha": "4e820902eba7b9d959a2e0cc8091f4b0f09ed77a",
+          "match": "byte_identical"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb9263ca856331308f02de7b97a3ce768f9dd240",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/fr3_hand_official.obj",
+      "bytes": 857791,
+      "lf_normalized_sha": null,
+      "matches": []
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "432aa0a82cc9eaf18f2e0c879174c1be76b7644d",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link0.obj",
+      "bytes": 6862883,
+      "lf_normalized_sha": "7987a092a743500df9d899b85749fb8c713ed5db",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link0.obj",
+          "blob_sha": "7987a092a743500df9d899b85749fb8c713ed5db",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "def070c7077c0ddb33bbe16cd6c75f19dd318734",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link0.stl",
+      "bytes": 10084,
+      "lf_normalized_sha": null,
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/link0.stl",
+          "blob_sha": "def070c7077c0ddb33bbe16cd6c75f19dd318734",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link0.stl",
+          "blob_sha": "def070c7077c0ddb33bbe16cd6c75f19dd318734",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/link0.stl",
+          "blob_sha": "def070c7077c0ddb33bbe16cd6c75f19dd318734",
+          "match": "byte_identical"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bc2e40c52a91d5af3cd170473d9f881ff201170",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link0_0.obj",
+      "bytes": 1483388,
+      "lf_normalized_sha": "aee8b021a8efa46a27e8582e93696356417615e6",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link0_0.obj",
+          "blob_sha": "aee8b021a8efa46a27e8582e93696356417615e6",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0206653824d21773d0d71a01d633dfd0474079d9",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link0_1.obj",
+      "bytes": 138394,
+      "lf_normalized_sha": "c84c8b01763c8f522735004081b0dc724a2b096c",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link0_1.obj",
+          "blob_sha": "c84c8b01763c8f522735004081b0dc724a2b096c",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27ef08a62a90bfd73fa860a549c9b60d7f3a76f1",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link0_2.obj",
+      "bytes": 975254,
+      "lf_normalized_sha": "02938dc1f6aac87c590c48a01a9dba3459d0bda9",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link0_2.obj",
+          "blob_sha": "02938dc1f6aac87c590c48a01a9dba3459d0bda9",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebbd47fcb012153fad238d49b1775a470d16c753",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link0_3.obj",
+      "bytes": 2342557,
+      "lf_normalized_sha": "3615c5b783da4ea36eb77ff479c1d4463f1289d3",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link0_3.obj",
+          "blob_sha": "3615c5b783da4ea36eb77ff479c1d4463f1289d3",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9dc39b652137afe8bc1d5810946c6ca76bf688c7",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link0_4.obj",
+      "bytes": 299533,
+      "lf_normalized_sha": "c6328c3dc14d7811815dd4092dfa093c84180895",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link0_4.obj",
+          "blob_sha": "c6328c3dc14d7811815dd4092dfa093c84180895",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9388a1a791872bd9a893759678feace955e21e3a",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link0_5.obj",
+      "bytes": 2803250,
+      "lf_normalized_sha": "ecfb87cac9f17339bb17b74814837eda7ddf88a6",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link0_5.obj",
+          "blob_sha": "ecfb87cac9f17339bb17b74814837eda7ddf88a6",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a83c6db2cf2d0601b3e08557c6304a06a0601dac",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link0_6.obj",
+      "bytes": 1488019,
+      "lf_normalized_sha": "50004baa205ffa9a1b42dd4b6731f2da60775300",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link0_6.obj",
+          "blob_sha": "50004baa205ffa9a1b42dd4b6731f2da60775300",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3328037b14d29821a093e20556bff59cbd6ecce6",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link1.obj",
+      "bytes": 890919,
+      "lf_normalized_sha": "b9622a397779d105daa2e7d3165a06e8740cc199",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link1.obj",
+          "blob_sha": "b9622a397779d105daa2e7d3165a06e8740cc199",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "426bcf2d7a04e067e01ab198d0ccfef63c6846e8",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link1.stl",
+      "bytes": 15084,
+      "lf_normalized_sha": null,
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/link1.stl",
+          "blob_sha": "426bcf2d7a04e067e01ab198d0ccfef63c6846e8",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link1.stl",
+          "blob_sha": "426bcf2d7a04e067e01ab198d0ccfef63c6846e8",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/link1.stl",
+          "blob_sha": "426bcf2d7a04e067e01ab198d0ccfef63c6846e8",
+          "match": "byte_identical"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0b8c376495a3244a3d8df49ddf1d6ccfbe63f12",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link2.obj",
+      "bytes": 882220,
+      "lf_normalized_sha": "ffc0a86fcffb7c99eb9016ec0890b202ac96b403",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link2.obj",
+          "blob_sha": "ffc0a86fcffb7c99eb9016ec0890b202ac96b403",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b369f1599a3c1356611716621f998bd8b5a8863b",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link2.stl",
+      "bytes": 15084,
+      "lf_normalized_sha": null,
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/link2.stl",
+          "blob_sha": "b369f1599a3c1356611716621f998bd8b5a8863b",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link2.stl",
+          "blob_sha": "b369f1599a3c1356611716621f998bd8b5a8863b",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/link2.stl",
+          "blob_sha": "b369f1599a3c1356611716621f998bd8b5a8863b",
+          "match": "byte_identical"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5345263e9f632b8bc4845762230c31eb0fd57215",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link3.obj",
+      "bytes": 2463999,
+      "lf_normalized_sha": "49b5d35bd7856782fa5be6bb31c7c111752c31ef",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link3.obj",
+          "blob_sha": "49b5d35bd7856782fa5be6bb31c7c111752c31ef",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25162eeedf286d1e27fdd4ba38950ae90678bb0f",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link3.stl",
+      "bytes": 15084,
+      "lf_normalized_sha": null,
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/link3.stl",
+          "blob_sha": "25162eeedf286d1e27fdd4ba38950ae90678bb0f",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link3.stl",
+          "blob_sha": "25162eeedf286d1e27fdd4ba38950ae90678bb0f",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/link3.stl",
+          "blob_sha": "25162eeedf286d1e27fdd4ba38950ae90678bb0f",
+          "match": "byte_identical"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3b4ba8dbcc74e718aab2b7b59f8d726a54a0599",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link3_0.obj",
+      "bytes": 980723,
+      "lf_normalized_sha": "ac13bd7f06a6480a55c91cb7b4c8b11c391990e0",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link3_0.obj",
+          "blob_sha": "ac13bd7f06a6480a55c91cb7b4c8b11c391990e0",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e22852877f3b01ae4afdbc0f455533b47c0e1bba",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link3_1.obj",
+      "bytes": 2206392,
+      "lf_normalized_sha": "711088cee6008bcfee511c7228aa8e738ac6173b",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link3_1.obj",
+          "blob_sha": "711088cee6008bcfee511c7228aa8e738ac6173b",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44704604d27b858675a206cf1e8e44dcec8ce0c0",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link4.obj",
+      "bytes": 2461742,
+      "lf_normalized_sha": "4b96cb6ee70d365910885de3e0c61d48f4fbdd6b",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link4.obj",
+          "blob_sha": "4b96cb6ee70d365910885de3e0c61d48f4fbdd6b",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76c8c33c3e1e6c184f8c3693b390892c25b179e3",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link4.stl",
+      "bytes": 15084,
+      "lf_normalized_sha": null,
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/link4.stl",
+          "blob_sha": "76c8c33c3e1e6c184f8c3693b390892c25b179e3",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link4.stl",
+          "blob_sha": "76c8c33c3e1e6c184f8c3693b390892c25b179e3",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/link4.stl",
+          "blob_sha": "76c8c33c3e1e6c184f8c3693b390892c25b179e3",
+          "match": "byte_identical"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1752382cd7d0e0dfc46178e76d9350e79c8a7212",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link4_0.obj",
+      "bytes": 983788,
+      "lf_normalized_sha": "cb628535cba2af8ffd590d1aaec494d0ea94b4f4",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link4_0.obj",
+          "blob_sha": "cb628535cba2af8ffd590d1aaec494d0ea94b4f4",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79fb6c094597ab99d4727f013d9a6b5b094f4b88",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link4_1.obj",
+      "bytes": 2203634,
+      "lf_normalized_sha": "583e2c8523a279b499d3510f8f2fac9d8eab6c0d",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link4_1.obj",
+          "blob_sha": "583e2c8523a279b499d3510f8f2fac9d8eab6c0d",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fc670e3ac67bff5b34f989b35c8ff6e65f9385d",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link5.obj",
+      "bytes": 3245112,
+      "lf_normalized_sha": "c283f2a6db8666c75733f343d58bef5cf4bf9c7c",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link5.obj",
+          "blob_sha": "c283f2a6db8666c75733f343d58bef5cf4bf9c7c",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3006a0b9a695f020e1887128d805d15aaa7fd342",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link5.stl",
+      "bytes": 15084,
+      "lf_normalized_sha": null,
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link5.stl",
+          "blob_sha": "3006a0b9a695f020e1887128d805d15aaa7fd342",
+          "match": "byte_identical"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8b47d9c593e9200b6da6c94e501447576f6e113",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link5_0.obj",
+      "bytes": 1269424,
+      "lf_normalized_sha": "a170827cfb6973b7898b043402893da647407df3",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link5_0.obj",
+          "blob_sha": "a170827cfb6973b7898b043402893da647407df3",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7aaca3a341be6462fc956dca598e1fd457f0e2d0",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link5_1.obj",
+      "bytes": 191518,
+      "lf_normalized_sha": "fac531425f4d706bd9ca3236ec49b76717b4a673",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link5_1.obj",
+          "blob_sha": "fac531425f4d706bd9ca3236ec49b76717b4a673",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03270557fa227c68b6aa688f90df3c1b434194dd",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link5_2.obj",
+      "bytes": 2924176,
+      "lf_normalized_sha": "76753c65cf83c260f9adddf330bfe43a0c1d8233",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link5_2.obj",
+          "blob_sha": "76753c65cf83c260f9adddf330bfe43a0c1d8233",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5edfcf84e5a726decfcc33047abc09f78aa2b935",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link6.obj",
+      "bytes": 5197200,
+      "lf_normalized_sha": "73c2d379824371ead861a3ba77d3cc2e2d1e0616",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link6.obj",
+          "blob_sha": "73c2d379824371ead861a3ba77d3cc2e2d1e0616",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e9594a873f97e572ec68a4e0ab6d65f41f5007e",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link6.stl",
+      "bytes": 10084,
+      "lf_normalized_sha": null,
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/link6.stl",
+          "blob_sha": "2e9594a873f97e572ec68a4e0ab6d65f41f5007e",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link6.stl",
+          "blob_sha": "2e9594a873f97e572ec68a4e0ab6d65f41f5007e",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/link6.stl",
+          "blob_sha": "2e9594a873f97e572ec68a4e0ab6d65f41f5007e",
+          "match": "byte_identical"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80903885b70703dde80e7b2a9c7f34864cd80fbd",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link6_0.obj",
+      "bytes": 562,
+      "lf_normalized_sha": "2b78d10e4af6f6073bf64495d9403aa8691652d2",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link6_0.obj",
+          "blob_sha": "2b78d10e4af6f6073bf64495d9403aa8691652d2",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23c7f573cd5f31da301a085157541797a36f3569",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link6_1.obj",
+      "bytes": 15671,
+      "lf_normalized_sha": "cb36c33cab9842829175718f8ebf76237e7f437d",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link6_1.obj",
+          "blob_sha": "cb36c33cab9842829175718f8ebf76237e7f437d",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89c260790a084bd0c535e5c481fd769171f05c56",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link6_2.obj",
+      "bytes": 2513212,
+      "lf_normalized_sha": "ca403cb497f65494f0e348723cd9c2a3f934f471",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link6_2.obj",
+          "blob_sha": "ca403cb497f65494f0e348723cd9c2a3f934f471",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab065f4718a930617a2a388a2da5935f228db68e",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link6_3.obj",
+      "bytes": 24687,
+      "lf_normalized_sha": "bfc57f6b70c406f9b6882f39d9cfeec90a5022e8",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link6_3.obj",
+          "blob_sha": "bfc57f6b70c406f9b6882f39d9cfeec90a5022e8",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a8f46d8e38021b8eeffc62caabb3035bf7686d4",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link6_4.obj",
+      "bytes": 1422,
+      "lf_normalized_sha": "be2d1cbff1daec44de450ec692e99ffbb5eb1a03",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link6_4.obj",
+          "blob_sha": "be2d1cbff1daec44de450ec692e99ffbb5eb1a03",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4457d31e42faf3a9e3a1be1f56bd447714d22b02",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link6_5.obj",
+      "bytes": 355462,
+      "lf_normalized_sha": "e492de352da79511df5ddca51c12cce98935ad47",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link6_5.obj",
+          "blob_sha": "e492de352da79511df5ddca51c12cce98935ad47",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f98512cbe7e7d8a0a1b2ccf66b0fa09017c9ca0",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link6_6.obj",
+      "bytes": 3863830,
+      "lf_normalized_sha": "a4bd84f7bd06b6994d3b553a4996af5be481115e",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link6_6.obj",
+          "blob_sha": "a4bd84f7bd06b6994d3b553a4996af5be481115e",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "542c4e5b1a34dc9d90b12391732c404427fc423d",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link6_7.obj",
+      "bytes": 14334,
+      "lf_normalized_sha": "197ab26138a720496b076f82980ce32d28a7259b",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link6_7.obj",
+          "blob_sha": "197ab26138a720496b076f82980ce32d28a7259b",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "002b9a867372aa7f27c71af47fd81393e2ef3300",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link7.obj",
+      "bytes": 4189224,
+      "lf_normalized_sha": "3788edc38b1a0c9e3962a048daa66e50b24637d2",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link7.obj",
+          "blob_sha": "3788edc38b1a0c9e3962a048daa66e50b24637d2",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0532d057507637533d25f4b3ed451f213685a61d",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link7.stl",
+      "bytes": 10084,
+      "lf_normalized_sha": null,
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_emika_panda/assets/link7.stl",
+          "blob_sha": "0532d057507637533d25f4b3ed451f213685a61d",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link7.stl",
+          "blob_sha": "0532d057507637533d25f4b3ed451f213685a61d",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "kyokochi/mujoco-model",
+          "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+          "path": "franka_emika_panda/assets/link7.stl",
+          "blob_sha": "0532d057507637533d25f4b3ed451f213685a61d",
+          "match": "byte_identical"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19acc4bcab2c5a407a16d9413806c0754a829ab2",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link7_0.obj",
+      "bytes": 911407,
+      "lf_normalized_sha": "8b480ddbf18288ceb7c520b768ff71caa400e8b6",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link7_0.obj",
+          "blob_sha": "8b480ddbf18288ceb7c520b768ff71caa400e8b6",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d5d7c6ad70e7ad5a4b613f94c999acb93b572599",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link7_1.obj",
+      "bytes": 959410,
+      "lf_normalized_sha": "0cefd0dfb61f54b1d3d0c1880db2c08b67cede1b",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link7_1.obj",
+          "blob_sha": "0cefd0dfb61f54b1d3d0c1880db2c08b67cede1b",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8873018950aba31285a32dfc4b298805d8fe9252",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link7_2.obj",
+      "bytes": 2475405,
+      "lf_normalized_sha": "fb680593550a1c472a28a7f63d0ca45c5887d088",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link7_2.obj",
+          "blob_sha": "fb680593550a1c472a28a7f63d0ca45c5887d088",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b181a31e5b43cf4042b3fc796b6173b3ef546a55",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/link7_3.obj",
+      "bytes": 1347192,
+      "lf_normalized_sha": "0af20cecb0dc981d9fa5bff4e4ec8ab48983feb1",
+      "matches": [
+        {
+          "repository": "google-deepmind/mujoco_menagerie",
+          "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+          "path": "franka_fr3/assets/link7_3.obj",
+          "blob_sha": "0af20cecb0dc981d9fa5bff4e4ec8ab48983feb1",
+          "match": "local_CRLF_to_LF"
+        }
+      ]
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c50b22201f94cd1e150144a63b217e1fc876e729",
+      "path": "vendor/fr3_d435i/mujoco_fr3/assets/material.mtl",
+      "bytes": 176,
+      "lf_normalized_sha": null,
+      "matches": []
+    }
+  ],
+  "licenses": [
+    {
+      "repository": "google-deepmind/mujoco_menagerie",
+      "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+      "path": "franka_emika_panda/LICENSE",
+      "blob_sha": "d9a10c0d8e868ebf8da0b3dc95bb0be634c34bfe"
+    },
+    {
+      "repository": "google-deepmind/mujoco_menagerie",
+      "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+      "path": "franka_fr3/LICENSE",
+      "blob_sha": "2b315a13af124c66d94f0fc2f47344d5d551979e"
+    },
+    {
+      "repository": "google-deepmind/mujoco_menagerie",
+      "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+      "path": "realsense_d435i/LICENSE",
+      "blob_sha": "5444cbd69d6a7df733e6b6c4b0652174c9e2ace2"
+    },
+    {
+      "repository": "kyokochi/mujoco-model",
+      "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+      "path": "franka_emika_panda/LICENSE",
+      "blob_sha": "d9a10c0d8e868ebf8da0b3dc95bb0be634c34bfe"
+    },
+    {
+      "repository": "kyokochi/mujoco-model",
+      "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+      "path": "realsense_d435i/LICENSE",
+      "blob_sha": "5444cbd69d6a7df733e6b6c4b0652174c9e2ace2"
+    }
+  ],
+  "local_licenses": [
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b99b065eb9058b03e0a82c856fe5e58a163bf129",
+      "path": "vendor/fr3_d435i/licenses/D435i_Apache-2.0.txt"
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7cd40e552f41493c9a4ac5934ac471285e7ae871",
+      "path": "vendor/fr3_d435i/licenses/Panda_Hand_Apache-2.0.txt"
+    },
+    {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c2ef7a0df430a77e4c84eb0e8cfefbe7ead0de2",
+      "path": "vendor/fr3_d435i/mujoco_fr3/LICENSE"
+    }
+  ],
+  "license_comparisons": [
+    {
+      "repository": "google-deepmind/mujoco_menagerie",
+      "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+      "path": "franka_emika_panda/LICENSE",
+      "blob_sha": "d9a10c0d8e868ebf8da0b3dc95bb0be634c34bfe",
+      "normalized_matching_local": [
+        "vendor/fr3_d435i/licenses/Panda_Hand_Apache-2.0.txt"
+      ],
+      "full_text_equal_after_crlf_to_lf": true
+    },
+    {
+      "repository": "google-deepmind/mujoco_menagerie",
+      "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+      "path": "franka_fr3/LICENSE",
+      "blob_sha": "2b315a13af124c66d94f0fc2f47344d5d551979e",
+      "normalized_matching_local": [
+        "vendor/fr3_d435i/mujoco_fr3/LICENSE"
+      ],
+      "full_text_equal_after_crlf_to_lf": true
+    },
+    {
+      "repository": "google-deepmind/mujoco_menagerie",
+      "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+      "path": "realsense_d435i/LICENSE",
+      "blob_sha": "5444cbd69d6a7df733e6b6c4b0652174c9e2ace2",
+      "normalized_matching_local": [
+        "vendor/fr3_d435i/licenses/D435i_Apache-2.0.txt"
+      ],
+      "full_text_equal_after_crlf_to_lf": true
+    },
+    {
+      "repository": "kyokochi/mujoco-model",
+      "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+      "path": "franka_emika_panda/LICENSE",
+      "blob_sha": "d9a10c0d8e868ebf8da0b3dc95bb0be634c34bfe",
+      "normalized_matching_local": [
+        "vendor/fr3_d435i/licenses/Panda_Hand_Apache-2.0.txt"
+      ],
+      "full_text_equal_after_crlf_to_lf": true
+    },
+    {
+      "repository": "kyokochi/mujoco-model",
+      "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+      "path": "realsense_d435i/LICENSE",
+      "blob_sha": "5444cbd69d6a7df733e6b6c4b0652174c9e2ace2",
+      "normalized_matching_local": [
+        "vendor/fr3_d435i/licenses/D435i_Apache-2.0.txt"
+      ],
+      "full_text_equal_after_crlf_to_lf": true
+    }
+  ],
+  "notice_inventory": [
+    {
+      "repository": "google-deepmind/mujoco_menagerie",
+      "commit": "0059d4335f8156206f63a35662313385f7ad6d74",
+      "scopes": [
+        "realsense_d435i",
+        "franka_emika_panda",
+        "franka_fr3"
+      ],
+      "notice_paths": []
+    },
+    {
+      "repository": "kyokochi/mujoco-model",
+      "commit": "cc3868ec21bae324e6dd3b01ea185b6e6f0fa172",
+      "scopes": [
+        "realsense_d435i",
+        "franka_emika_panda"
+      ],
+      "notice_paths": []
+    }
+  ],
+  "summary": {
+    "assets": 64,
+    "exact_matches": 9,
+    "normalized_only": 50,
+    "unmatched": [
+      "vendor/fr3_d435i/mujoco_fr3/assets/FR3_D435i_mount.obj",
+      "vendor/fr3_d435i/mujoco_fr3/assets/d435_official.obj",
+      "vendor/fr3_d435i/mujoco_fr3/assets/fr3_finger_official.obj",
+      "vendor/fr3_d435i/mujoco_fr3/assets/fr3_hand_official.obj",
+      "vendor/fr3_d435i/mujoco_fr3/assets/material.mtl"
+    ]
+  },
+  "scope": "Only vendor/fr3_d435i/mujoco_fr3/assets; content matching is not proof of original import revision or blanket redistribution rights.",
+  "license_texts_retained_in": "external/robot_control/vendor/fr3_d435i"
+}

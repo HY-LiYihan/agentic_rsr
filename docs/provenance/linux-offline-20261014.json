@@ -1,0 +1,206 @@
+{
+  "main_commit": "af27d589a2d53409d22a9d1a69a581fe252ebbef",
+  "source_scope": "Current tracked main archive; previously anonymous pinned external sources. VGGT metadata only; Piper Isaac required resources only.",
+  "platform": "Linux-6.12.76-linuxkit-x86_64-with-glibc2.41",
+  "machine": "x86_64",
+  "python": "3.11.17",
+  "main_archive_sha256": "69bb1d75e222bc2b955fe3871f4c898741f9c781bc0a561312d7c59c54d6fc08",
+  "steps": [
+    {
+      "name": "apt-update",
+      "command": [
+        "apt-get",
+        "-o",
+        "APT::Update::Error-Mode=any",
+        "update"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 6.678
+    },
+    {
+      "name": "system-libraries",
+      "command": [
+        "apt-get",
+        "install",
+        "-y",
+        "--no-install-recommends",
+        "libgl1",
+        "libglib2.0-0t64",
+        "libegl1",
+        "libgl1-mesa-dri"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 18.358
+    },
+    {
+      "name": "uv-install",
+      "command": [
+        "python",
+        "-m",
+        "pip",
+        "install",
+        "uv==0.11.32"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 9.066
+    },
+    {
+      "name": "locked-install",
+      "command": [
+        "uv",
+        "sync",
+        "--locked",
+        "--python",
+        "/usr/local/bin/python",
+        "--extra",
+        "sim",
+        "--extra",
+        "dev"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 81.304
+    },
+    {
+      "name": "dependencies",
+      "command": [
+        "/work/source/.venv/bin/python",
+        "-c",
+        "import importlib.metadata as m,json; print(json.dumps({d:m.version(d) for d in [\"numpy\",\"opencv-python\",\"mujoco\",\"pin\",\"trimesh\",\"pytest\",\"robot-control\"]}, indent=2))"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.239
+    },
+    {
+      "name": "offline-tests",
+      "command": [
+        "/work/source/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-m",
+        "not models",
+        "-q",
+        "-ra",
+        "--junitxml=/evidence/tests.xml"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 97.074
+    },
+    {
+      "name": "help-real2sim-stage1-cli",
+      "command": [
+        "/work/source/.venv/bin/python",
+        "-m",
+        "real2sim.stage1.cli",
+        "--help"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.613
+    },
+    {
+      "name": "help-real2sim-stage2-agent_runner",
+      "command": [
+        "/work/source/.venv/bin/python",
+        "-m",
+        "real2sim.stage2.agent_runner",
+        "--help"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.482
+    },
+    {
+      "name": "help-real2sim-stage3-mujoco_export",
+      "command": [
+        "/work/source/.venv/bin/python",
+        "-m",
+        "real2sim.stage3.mujoco_export",
+        "--help"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.453
+    },
+    {
+      "name": "help-perception-example",
+      "command": [
+        "/work/source/.venv/bin/python",
+        "-m",
+        "perception.example",
+        "--help"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.488
+    }
+  ],
+  "status": "passed",
+  "apt_mirror": "https://mirrors.tuna.tsinghua.edu.cn",
+  "test_suites": [
+    {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "5",
+      "tests": "310",
+      "time": "96.189",
+      "timestamp": "2026-10-13T18:11:20.305557+00:00",
+      "hostname": "c2fd4412b884"
+    }
+  ],
+  "dependencies": {
+    "numpy": "1.26.4",
+    "opencv-python": "4.11.0.86",
+    "mujoco": "3.14.0",
+    "pin": "2.7.0",
+    "trimesh": "5.1.0",
+    "pytest": "9.1.1",
+    "robot-control": "0.1.0"
+  },
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "host": "macOS arm64; Docker Desktop linux/amd64 emulation",
+  "container_image": "python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce",
+  "uv_version": "0.11.32",
+  "selected_extras": [
+    "sim",
+    "dev"
+  ],
+  "unverified": [
+    "Complete anonymous recursive Git checkout",
+    "Complete VGGT inference source",
+    "local and agent extras on Linux",
+    "Blender on Linux",
+    "CUDA checkpoint inference",
+    "Paper task reproduction"
+  ],
+  "test_results": {
+    "passed": 305,
+    "skipped": 5,
+    "real_model_tests_deselected": 2,
+    "pytest_seconds": 96.21
+  },
+  "skipped_tests": [
+    {
+      "test": "tests/integration/test_stage1_blender.py::test_blender_four_cameras_and_fixed_arm",
+      "reason": "Blender not installed"
+    },
+    {
+      "test": "tests/integration/test_stage1_blender.py::test_delivered_scene_uses_robot_base_as_world_origin",
+      "reason": "Blender not installed"
+    },
+    {
+      "test": "tests/unit/test_sim_stage3_emergency.py::test_derived_stage3_scene_exact_episode",
+      "reason": "Optional derived Stage 3 scene not installed"
+    },
+    {
+      "test": "tests/unit/test_sim_stage3_interface.py::test_physical_gripper_automatically_attaches_only_on_bilateral_contact",
+      "reason": "Derived Stage 3 scene is not available"
+    },
+    {
+      "test": "tests/unit/test_sim_stage3_progression.py::test_randomized_stage_resets_and_exact_restores_nominal",
+      "reason": "Stage 3 emergency-stop fixture is not installed"
+    }
+  ],
+  "raw_evidence": {
+    "report_sha256": "6b1eb813c4a836264c6617f13bdccafe1cbb2abc0745be81fbd4010579de3521",
+    "tests_xml_sha256": "1122895974d1ff6fd6be129a2dcd3287fc64edf08069235ce8d35de2184881c9",
+    "runner_sha256": "62a1e9a94670162c112b8e06f5a39bc473fba98f8fdd90ccc13d1116ba5e9e80"
+  }
+}

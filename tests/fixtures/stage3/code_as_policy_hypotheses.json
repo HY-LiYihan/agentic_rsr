@@ -1,0 +1,16 @@
+{
+  "source": "code_as_policy_tabletop.xml fixture; scene parameters are simulation inputs, not physical measurements",
+  "real_world_measurements": [],
+  "hypotheses": [
+    {
+      "objects": ["blue_block", "green_block", "red_block"],
+      "expectation": "The blocks should remain approximately stationary on the table without external input.",
+      "origin": "tabletop scene design assumption; not independently measured"
+    },
+    {
+      "objects": ["blue_block"],
+      "expectation": "A frictional two-pad pinch-and-lift test may pick up a free block; the real gripper force and success threshold are unknown.",
+      "origin": "qualitative simulation sanity check only"
+    }
+  ]
+}

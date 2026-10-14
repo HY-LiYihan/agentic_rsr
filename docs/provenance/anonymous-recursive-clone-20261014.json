@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "status": "passed",
+  "method": "Anonymous HTTPS clone with recursive submodules and depth 1",
+  "command": "git -c http.version=HTTP/1.1 clone --recurse-submodules --depth 1 https://github.com/HY-LiYihan/agentic_rsr.git",
+  "environment": {
+    "HOME": "empty temporary directory",
+    "git_config_global": "/dev/null",
+    "git_config_system": "disabled",
+    "credential_prompt": "disabled",
+    "credentials_used": false
+  },
+  "main_commit": "a88d732f3acf60877c0a429b9eb7b8c94ac1237f",
+  "submodules": {
+    "external/robot_control": "6016dd5f20d2146a28e425ce77dfb9430f1173",
+    "external/robot_control/vendor/agx_arm_urdf": "f6642ce0d7872c686f29c99e9e10cd23d1d49313",
+    "external/robot_control/vendor/piper_isaac_sim": "8e1f88fdb7afca49c40e9a0c1c01cc588e86f0d2",
+    "external/robot_control/vendor/piper_sdk": "c9e8a28174e71eeaac448593cb65f8ab258a92fe",
+    "external/ultralytics": "f171c4b7aea56062d77061577e6b878b62e520fb",
+    "external/vggt_omega": "48b23c8ce72c9a8fcf987f0d7f43d8e4870759f6"
+  },
+  "checks": {
+    "main_worktree_clean": true,
+    "vggt_tracked_files": 113,
+    "fr3_urdf_mesh_collision_references": 10,
+    "fr3_urdf_mesh_collision_paths_resolved": 10,
+    "clone_log_sha256": "4f31e050a52a83228433becbb8942d57a76647b20cf3bef4c0744b19b8c0f289"
+  },
+  "evidence_directory": "/tmp/agentic-rsr-fresh-https.CoJl1T",
+  "scope": "Public source and recursive submodule retrieval only; no dependency installation, checkpoint download, model construction or inference"
+}

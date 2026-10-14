@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "robot_control_commit": "6016d6dd5f20d2146a28e425ce77dfb9430f1173",
+  "piper_isaac_sim_commit": "8e1f88fdb7afca49c40e9a0c1c01cc588e86f0d2",
+  "method": "Fixed Git blobs compared to complete upstream Git trees; meshes not downloaded; text candidates additionally compared after CRLF-to-LF only",
+  "upstreams": [
+    {
+      "repository": "realsenseai/realsense-ros",
+      "commit": "7a87097c499e3b0b69518d54a8e7a9ac1924e87c",
+      "tree_sha": "5534b3aa6caba676ced9ec9825e3a3a06e4cf63c",
+      "truncated": false,
+      "entries": 253,
+      "licensing_paths": [
+        {
+          "path": "LICENSE",
+          "blob_sha": "d639b1e2457de50acbd2d943a593b701331a2824"
+        },
+        {
+          "path": "NOTICE.md",
+          "blob_sha": "01c648c4e7eaad5ae4e84047af4ec5c13e2cb396"
+        }
+      ]
+    },
+    {
+      "repository": "frankarobotics/franka_description",
+      "commit": "7aeeddc449edf8d62b594f9e36a81da53e7796f9",
+      "tree_sha": "b77805b2bed7f4d5f760e7be7fe1438c3ad42b5b",
+      "truncated": false,
+      "entries": 262,
+      "licensing_paths": [
+        {
+          "path": "LICENSE",
+          "blob_sha": "d20a48b115694fa05de521256f87beaf5024fd83"
+        },
+        {
+          "path": "NOTICE",
+          "blob_sha": "07259f5d8fd1a45282fab3e12e84f09619b99979"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "repository": "HY-LiYihan/robot_control",
+      "commit": "6016dd5f20d2146a28e425ce77dfb9430f1173",
+      "path": "vendor/fr3_d435i/models/FR3_D435i_mount.obj",
+      "blob_sha": "4f17b8b69ef8c3075754844fbeeb14c8e66e083c",
+      "sha256": "08ef79ff5ecb4df6cd4b79ed006e745d1d01c834be53857a96b5295de5305dcf",
+      "bytes": 228627,
+      "lf_normalized_sha": null,
+      "matches": []
+    },
+    {
+      "repository": "HY-LiYihan/robot_control",
+      "commit": "6016dd5f20d2146a28e425ce77dfb9430f1173",
+      "path": "vendor/fr3_d435i/models/FR3_D435i_mount.stl",
+      "blob_sha": "7af19c85783d8bfdd8640bdf68211e511e8860e8",
+      "sha256": "185a904aa4c2d679e9caa0d85b54dc07a9bd21d3e2a1b1487d26302afc16c913",
+      "bytes": 1629324,
+      "lf_normalized_sha": null,
+      "matches": []
+    },
+    {
+      "repository": "HY-LiYihan/robot_control",
+      "commit": "6016dd5f20d2146a28e425ce77dfb9430f1173",
+      "path": "vendor/fr3_d435i/realsense2_description/meshes/d435.dae",
+      "blob_sha": "0ed32368fc5ba6912be530395a72553de9f21d9e",
+      "sha256": "42f3b66f47a1f8f425a2e4dc07c1d9c283183167d8441f520a15623d98f9bf78",
+      "bytes": 15782439,
+      "lf_normalized_sha": "5867be4b44940de51e3b324d1281efc849934653",
+      "matches": [
+        {
+          "repository": "realsenseai/realsense-ros",
+          "commit": "7a87097c499e3b0b69518d54a8e7a9ac1924e87c",
+          "path": "realsense2_description/meshes/d435.dae",
+          "blob_sha": "0ed32368fc5ba6912be530395a72553de9f21d9e",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "realsenseai/realsense-ros",
+          "commit": "7a87097c499e3b0b69518d54a8e7a9ac1924e87c",
+          "path": "realsense2_description/meshes/d436.dae",
+          "blob_sha": "0ed32368fc5ba6912be530395a72553de9f21d9e",
+          "match": "byte_identical"
+        }
+      ]
+    },
+    {
+      "repository": "agilexrobotics/piper_isaac_sim",
+      "commit": "8e1f88fdb7afca49c40e9a0c1c01cc588e86f0d2",
+      "path": "realsense2_description/meshes/d435.dae",
+      "blob_sha": "0ed32368fc5ba6912be530395a72553de9f21d9e",
+      "sha256": "42f3b66f47a1f8f425a2e4dc07c1d9c283183167d8441f520a15623d98f9bf78",
+      "bytes": 15782439,
+      "lf_normalized_sha": "5867be4b44940de51e3b324d1281efc849934653",
+      "matches": [
+        {
+          "repository": "realsenseai/realsense-ros",
+          "commit": "7a87097c499e3b0b69518d54a8e7a9ac1924e87c",
+          "path": "realsense2_description/meshes/d435.dae",
+          "blob_sha": "0ed32368fc5ba6912be530395a72553de9f21d9e",
+          "match": "byte_identical"
+        },
+        {
+          "repository": "realsenseai/realsense-ros",
+          "commit": "7a87097c499e3b0b69518d54a8e7a9ac1924e87c",
+          "path": "realsense2_description/meshes/d436.dae",
+          "blob_sha": "0ed32368fc5ba6912be530395a72553de9f21d9e",
+          "match": "byte_identical"
+        }
+      ]
+    }
+  ],
+  "licenses": [
+    {
+      "repository": "realsenseai/realsense-ros",
+      "commit": "7a87097c499e3b0b69518d54a8e7a9ac1924e87c",
+      "path": "LICENSE",
+      "blob_sha": "d639b1e2457de50acbd2d943a593b701331a2824",
+      "local_d435i_license_LF_equal": false,
+      "retained_notice": "docs/notices/realsense-ros-LICENSE"
+    },
+    {
+      "repository": "realsenseai/realsense-ros",
+      "commit": "7a87097c499e3b0b69518d54a8e7a9ac1924e87c",
+      "path": "NOTICE.md",
+      "blob_sha": "01c648c4e7eaad5ae4e84047af4ec5c13e2cb396",
+      "local_d435i_license_LF_equal": false,
+      "retained_notice": "docs/notices/realsense-ros-NOTICE.md"
+    },
+    {
+      "repository": "frankarobotics/franka_description",
+      "commit": "7aeeddc449edf8d62b594f9e36a81da53e7796f9",
+      "path": "LICENSE",
+      "blob_sha": "d20a48b115694fa05de521256f87beaf5024fd83",
+      "local_d435i_license_LF_equal": false,
+      "retained_notice": null
+    },
+    {
+      "repository": "frankarobotics/franka_description",
+      "commit": "7aeeddc449edf8d62b594f9e36a81da53e7796f9",
+      "path": "NOTICE",
+      "blob_sha": "07259f5d8fd1a45282fab3e12e84f09619b99979",
+      "local_d435i_license_LF_equal": false,
+      "retained_notice": null
+    }
+  ],
+  "urdf_collision_path_repair": {
+    "commit": "6016dd5f20d2146a28e425ce77dfb9430f1173",
+    "source_branch": "codex/fr3-urdf-paths",
+    "old_urdf_sha256": "8909d0a8fd65bbc9ccfabbec594502f21efd25552ee4210640bc539f75f4c1c1",
+    "new_urdf_sha256": "dafb5275ac6f8f86393500e1810366ff7342413652359b99aef85f98a366dea5",
+    "path_check_date": "2026-10-14",
+    "path_check": "passed",
+    "mesh_replacements": [
+      {"old": "../meshes/franka_collision/link0.stl", "new": "../mujoco_fr3/assets/link0.stl", "local_blob_sha": "def070c7077c0ddb33bbe16cd6c75f19dd318734"},
+      {"old": "../meshes/franka_collision/link1.stl", "new": "../mujoco_fr3/assets/link1.stl", "local_blob_sha": "426bcf2d7a04e067e01ab198d0ccfef63c6846e8"},
+      {"old": "../meshes/franka_collision/link2.stl", "new": "../mujoco_fr3/assets/link2.stl", "local_blob_sha": "b369f1599a3c1356611716621f998bd8b5a8863b"},
+      {"old": "../meshes/franka_collision/link3.stl", "new": "../mujoco_fr3/assets/link3.stl", "local_blob_sha": "25162eeedf286d1e27fdd4ba38950ae90678bb0f"},
+      {"old": "../meshes/franka_collision/link4.stl", "new": "../mujoco_fr3/assets/link4.stl", "local_blob_sha": "76c8c33c3e1e6c184f8c3693b390892c25b179e3"},
+      {"old": "../meshes/franka_collision/link5.stl", "new": "../mujoco_fr3/assets/link5.stl", "local_blob_sha": "3006a0b9a695f020e1887128d805d15aaa7fd342"},
+      {"old": "../meshes/franka_collision/link6.stl", "new": "../mujoco_fr3/assets/link6.stl", "local_blob_sha": "2e9594a873f97e572ec68a4e0ab6d65f41f5007e"},
+      {"old": "../meshes/franka_collision/link7.stl", "new": "../mujoco_fr3/assets/link7.stl", "local_blob_sha": "0532d057507637533d25f4b3ed451f213685a61d"},
+      {"old": "../meshes/franka_collision/hand.stl", "new": "../mujoco_fr3/assets/fr3_hand_collision.stl", "local_blob_sha": "4e820902eba7b9d959a2e0cc8091f4b0f09ed77a"}
+    ]
+  },
+  "unresolved": [
+    "Custom mount OBJ/STL authorship, source CAD/conversion provenance and redistribution license not established by mesh-name or neighboring licenses.",
+    "Existing matched visual meshes in mujoco_fr3/assets are covered by the previous fr3-assets report and were not audited again."
+  ],
+  "realsense_package_declaration": {
+    "path": "realsense2_description/package.xml",
+    "blob_sha": "1704fafaf9ba40dfc76e1d5530357140fa3bf927",
+    "version": "4.59.1",
+    "license": "Apache License 2.0",
+    "closer_license_notice_copying_readme_files": []
+  },
+  "scope": "Four mesh files plus the fixed URDF path repair; no license grant inferred for unmatched mount files. RealSense NOTICE is the upstream repository-wide component inventory."
+}

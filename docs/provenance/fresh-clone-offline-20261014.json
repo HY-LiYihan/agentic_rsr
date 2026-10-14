@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "status": "passed_with_expected_skips",
+  "source_evidence": "anonymous-recursive-clone-20261014.json",
+  "environment": {
+    "platform": "macOS arm64",
+    "python": "3.11.15",
+    "uv": "0.11.32",
+    "home": "/tmp/agentic-rsr-fresh-https.CoJl1T/home",
+    "new_uv_cache": true,
+    "weights": false,
+    "cuda": false,
+    "remote_perception": false
+  },
+  "installation": {
+    "command": "uv --no-config sync --locked --python 3.11 --extra sim --extra dev",
+    "status": "passed",
+    "packages_installed": 43,
+    "numpy": "1.26.4",
+    "opencv-python": "4.11.0.86",
+    "mujoco": "3.14.0",
+    "pin": "2.7.0",
+    "robot-control": "0.1.0",
+    "pytest": "9.1.1"
+  },
+  "tests": {
+    "command": "mjpython -m pytest tests/unit tests/integration -m 'not models' -q -ra --junitxml=tmp/fresh-https-offline.xml",
+    "passed": 333,
+    "skipped": 3,
+    "models_deselected": 2,
+    "duration_seconds": 82.71,
+    "junit_sha256": "f2a3426fb21598da4b3b6b9728e78a31782491201a98936ea4ecf520d846064f"
+  },
+  "skip_reasons": [
+    "Optional derived Stage 3 scene not installed",
+    "Derived Stage 3 scene is not available",
+    "Stage 3 emergency-stop fixture is not installed"
+  ],
+  "scope": "Fresh public checkout installation and offline contracts only; no local model checkpoint inference, Linux CUDA or paper experiment reproduction",
+  "evidence_directory": "/tmp/agentic-rsr-fresh-https.CoJl1T/"
+}

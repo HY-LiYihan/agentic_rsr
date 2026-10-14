@@ -1,0 +1,7 @@
+{
+  "version": "stage1-piper-v1",
+  "mask_iou_min": 0.35,
+  "coverage_min": 0.55,
+  "median_depth_residual_m_max": 0.05,
+  "valid_pixels_min": 100
+}

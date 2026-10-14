@@ -1,0 +1,5 @@
+{
+  "verdict": "passed",
+  "basis": "The final Stage 3 camera frame shows the emergency-stop body inside the green tray. The action trace includes a contact-verified pick/place, release, gripper opening, and withdrawal; the generated policy checks the released body position against the tray. No simulator joint override was used.",
+  "scope": "exact simulation only; randomized simulation and real robot not evaluated"
+}

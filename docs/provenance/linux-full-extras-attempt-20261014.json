@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "status": "failed_installation_transport",
+  "main_commit": "e6934516e667109962bdc5ac5b45aab196adea2a",
+  "source_scope": "Tracked main git archive and six complete fixed external archives; no sparse sources.",
+  "main_archive_sha256": "9feb72af114344c78a62b9196757c4256d5f7c015ba425ca298a9541b9d0e3f2",
+  "external_archive_evidence": "macos-full-extras-20261014.json",
+  "host": "macOS arm64",
+  "execution": "Docker Desktop emulated linux/amd64 Debian 13; no GPU or checkpoints",
+  "image": "python:3.11-slim@sha256:e88e9763f943ec1834f992a4b51e0f24500486803e8bc534e5767af9ea65f6ce",
+  "platform": "Linux-6.12.76-linuxkit-x86_64-with-glibc2.41",
+  "python": "3.11.17",
+  "uv": "0.11.32",
+  "empty_home": true,
+  "wheel_cache_reused": false,
+  "clip_git_cache_reused": true,
+  "apt_mirror": "https://mirrors.tuna.tsinghua.edu.cn",
+  "system_packages": ["libgl1", "libglib2.0-0t64", "libegl1", "libgl1-mesa-dri", "git"],
+  "system_package_installation_exit_code": 0,
+  "locked_installation": {
+    "command": [
+      "uv", "--no-config", "sync", "--locked", "--python", "/usr/local/bin/python",
+      "--extra", "local", "--extra", "sim", "--extra", "agent", "--extra", "dev"
+    ],
+    "exit_code": 1,
+    "recorded_wall_seconds": 1300.346,
+    "timing_scope": "Launch until exit collection; the collector was paused while uv continued and resumed after the installer exited. No focused tests ran during that interval.",
+    "original_timeout_seconds": 900,
+    "controller_extended_timeout_seconds": 1800,
+    "terminated_by_timeout": false,
+    "completed": false,
+    "failure_package": "nvidia-cusparselt-cu12==0.6.2",
+    "failure_url": "https://files.pythonhosted.org/packages/78/a8/bcbb63b53a4b1234feeafb65544ee55495e1bb37ec31b999b963cbccfd1d/nvidia_cusparselt_cu12-0.6.2-py3-none-manylinux2014_x86_64.whl",
+    "failure": "Request failed after four retries: TLS handshake EOF",
+    "lock_sources_changed": false
+  },
+  "executed": {
+    "real_imports": false,
+    "clip_tokenization": false,
+    "offline_suite": false,
+    "focused_patch_suite": false,
+    "model_check": false,
+    "checkpoint_inference": false
+  },
+  "prepared_patch_commit_not_tested_on_linux": "31d43d5eabdc721eda5ec1174003556907e965c5",
+  "recursive_git_clone_verified": false,
+  "raw_evidence_directory": "/tmp/agentic-rsr-linux-full.djZB6Q/evidence/",
+  "raw_evidence_sha256": {
+    "report.json": "23052235601bd413504e285cac50671d15fe671d968800278c06491d0cb863c3",
+    "locked-all-extras.log": "42ceb42f1550084144b265a50d9846aae5edf53eda6dbfccd28fa503855134f2",
+    "install-controller-note.json": "d6e33eafccabc8af3ffbf411ea0a090103eb8ec49ec58fd9d86ab97554d0a5ee",
+    "patch-source-commit.json": "a92ec6be6bb20cfef4e7e53ba934fc7891f2fd05097eef782d0d6dfdbc5322bb"
+  },
+  "cleanup": {
+    "container_removed": true,
+    "new_container_cache_and_venv_removed": true,
+    "existing_user_cache_modified": false,
+    "docker_restored_stopped": true,
+    "started_processes_terminal": true,
+    "second_installation_attempted": false
+  },
+  "limits": [
+    "This failed installation does not establish Linux all-extra readiness or checkpoint inference.",
+    "The earlier Linux sim,dev CPU verification retains its original narrower source and installation scope.",
+    "Prepared patch files were not exercised in this Linux attempt; their passing tests are the separate macOS record.",
+    "Complete source archives do not establish an anonymous recursive Git checkout."
+  ]
+}

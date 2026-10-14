@@ -1,0 +1,11 @@
+Agentic RSR
+Copyright 2026 Agentic RSR contributors
+
+The project's original software code and documentation are licensed under
+the Apache License, Version 2.0. See LICENSE.
+
+Third-party source code, model checkpoints, robot meshes, derived point clouds,
+experiment data and outputs, paper figures and PDF, and university marks are
+not licensed by this notice. They retain their respective licenses and rights.
+See docs/THIRD_PARTY.md, docs/ASSET_SOURCES.md and docs/ASSET_DISTRIBUTION.md
+for sources, retained notices, and separate distribution information.

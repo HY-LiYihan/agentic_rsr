@@ -1,0 +1,80 @@
+cff-version: 1.2.0
+message: "If you use Agentic RSR, please cite the preprint."
+title: "Agentic RSR: Real-to-Sim-to-Real through Scene Reconstruction and Execution-Grounded Robot Policies"
+type: software
+abstract: >-
+  Agentic RSR connects task-linked scene reconstruction, execution-grounded
+  robot policies, and real-to-sim-to-real transfer for manipulation.
+authors:
+  - family-names: Li
+    given-names: Yihan
+    affiliation: Sun Yat-sen University
+  - family-names: Feng
+    given-names: Yating
+    affiliation: HKUST (Guangzhou)
+  - family-names: Sun
+    given-names: Shengjiu
+    affiliation: Sun Yat-sen University
+  - family-names: Chen
+    given-names: Jianing
+    affiliation: Sun Yat-sen University
+  - family-names: Ren
+    given-names: Hao
+    affiliation: Sun Yat-sen University
+  - family-names: Yang
+    given-names: Bowen
+    affiliation: HKUST (Guangzhou)
+  - family-names: Xu
+    given-names: Weisheng
+    affiliation: HKUST (Guangzhou)
+  - family-names: Wu
+    given-names: Qiwei
+    affiliation: HKUST (Guangzhou)
+  - family-names: Cheng
+    given-names: Hui
+    affiliation: Sun Yat-sen University
+  - family-names: Xu
+    given-names: Renjing
+    affiliation: HKUST (Guangzhou)
+date-released: 2026-10-14
+version: 0.1.0
+license: Apache-2.0
+repository-code: https://github.com/HY-LiYihan/agentic_rsr
+url: https://arxiv.org/abs/2610.10479
+keywords:
+  - robot manipulation
+  - scene reconstruction
+  - sim-to-real
+  - real-to-sim
+  - robot learning
+preferred-citation:
+  type: article
+  title: "Agentic RSR: Real-to-Sim-to-Real through Scene Reconstruction and Execution-Grounded Robot Policies"
+  authors:
+    - family-names: Li
+      given-names: Yihan
+    - family-names: Feng
+      given-names: Yating
+    - family-names: Sun
+      given-names: Shengjiu
+    - family-names: Chen
+      given-names: Jianing
+    - family-names: Ren
+      given-names: Hao
+    - family-names: Yang
+      given-names: Bowen
+    - family-names: Xu
+      given-names: Weisheng
+    - family-names: Wu
+      given-names: Qiwei
+    - family-names: Cheng
+      given-names: Hui
+    - family-names: Xu
+      given-names: Renjing
+  year: 2026
+  journal: arXiv
+  url: https://arxiv.org/abs/2610.10479
+  identifiers:
+    - type: other
+      value: "2610.10479"
+      description: arXiv

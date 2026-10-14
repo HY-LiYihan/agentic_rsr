@@ -1,0 +1,2032 @@
+{
+  "main_commit": "08cd9095a722d0a57952c1f44f89ad3c528cbbb5",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.11.15",
+  "empty_home": true,
+  "wheel_and_git_cache_reused": true,
+  "recursive_git_clone_verified": false,
+  "extras": [
+    "local",
+    "sim",
+    "agent",
+    "dev"
+  ],
+  "archives": [
+    {
+      "name": "main-source.tar.gz",
+      "sha256": "3e3f228b2c201e69f087ace55a66eafb53d41f0c1e1af2fb57992130492d6285",
+      "target": "."
+    },
+    {
+      "name": "robot_control.complete.tar.gz",
+      "sha256": "2f11e8d446c1e23d2811ae4505b841ee861e1493f2b581fd096b7c68d647fe49",
+      "target": "external/robot_control"
+    },
+    {
+      "name": "agx_arm_urdf.complete.tar.gz",
+      "sha256": "1e035dd00aad075e8a891cb08da31d2dd1f8fc3d8582e6d5abd8bef06614c4da",
+      "target": "external/robot_control/vendor/agx_arm_urdf"
+    },
+    {
+      "name": "piper_sdk.tar.gz",
+      "sha256": "1f79a7124fed6add07ab9d4b49867ea807f89be961057104902b94f1a6dfaf2d",
+      "target": "external/robot_control/vendor/piper_sdk"
+    },
+    {
+      "name": "piper-isaac.tar.gz",
+      "sha256": "0766ca86dacf2e3632bc2052cb10569c9a8dbd9765600019e03c8c87694c21c2",
+      "target": "external/robot_control/vendor/piper_isaac_sim"
+    },
+    {
+      "name": "ultralytics.tar.gz",
+      "sha256": "af2adaa04bc3c544d15b2c9f59885caee8028bd3ae4f1699bdb7aeabd6b93ee6",
+      "target": "external/ultralytics"
+    },
+    {
+      "name": "vggt-omega.tar.gz",
+      "sha256": "7ee9d87cb0ab0efc42d9092332d3e0809ef379bafe2c7c293354378a5657793c",
+      "target": "external/vggt_omega"
+    }
+  ],
+  "steps": [
+    {
+      "name": "locked-all-extras",
+      "command": [
+        "uv",
+        "--no-config",
+        "sync",
+        "--locked",
+        "--python",
+        "3.11",
+        "--extra",
+        "local",
+        "--extra",
+        "sim",
+        "--extra",
+        "agent",
+        "--extra",
+        "dev"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 35.085
+    },
+    {
+      "name": "model-imports",
+      "command": [
+        "${SOURCE}/.venv/bin/python",
+        "-c",
+        "import json, importlib.metadata as m\nimport numpy, cv2, torch, torchvision, timm, vggt_omega, ultralytics, robot_control, openai_codex\nfrom vggt_omega.models import VGGTOmega\nfrom ultralytics.models.sam import SAM3SemanticPredictor\nfrom clip.simple_tokenizer import SimpleTokenizer\ntokenizer = SimpleTokenizer()\nprint(json.dumps({'versions': {d:m.version(d) for d in ['numpy','opencv-python','torch','torchvision','timm','vggt-omega','ultralytics','clip','mujoco','pin','robot-control','openai-codex']}, 'source_paths': {n:getattr(module,'__file__',None) for n,module in [('vggt_omega',vggt_omega),('ultralytics',ultralytics),('robot_control',robot_control)]}, 'tokenizer_tokens':len(tokenizer.encode('robotic arm')), 'cuda_available':torch.cuda.is_available()}, indent=2))\n"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 45.081
+    },
+    {
+      "name": "model-imports-isolated",
+      "command": [
+        "${SOURCE}/.venv/bin/python",
+        "-c",
+        "import json, importlib.metadata as m, sys\nfrom pathlib import Path\nimport numpy, cv2, torch, torchvision, timm, vggt_omega, ultralytics, robot_control, openai_codex\nfrom vggt_omega.models import VGGTOmega\nfrom ultralytics.models.sam import SAM3SemanticPredictor\nfrom clip.simple_tokenizer import SimpleTokenizer\ntokenizer = SimpleTokenizer()\ndata = {'versions': {d:m.version(d) for d in ['numpy','opencv-python','torch','torchvision','timm','vggt-omega','ultralytics','clip','mujoco','pin','robot-control','openai-codex']}, 'source_paths': {n:getattr(module,'__file__',None) for n,module in [('vggt_omega',vggt_omega),('ultralytics',ultralytics),('robot_control',robot_control)]}, 'tokenizer_tokens':len(tokenizer.encode('robotic arm')), 'cuda_available':torch.cuda.is_available()}\nPath(sys.argv[1]).write_text(json.dumps(data, indent=2) + '\\n')\nprint(json.dumps(data, indent=2))\n",
+        "${WORK}/model-imports.json"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.442
+    },
+    {
+      "name": "offline-all-extras-tests",
+      "command": [
+        "${SOURCE}/.venv/bin/mjpython",
+        "-m",
+        "pytest",
+        "-m",
+        "not models",
+        "-q",
+        "-ra",
+        "--junitxml=${WORK}/all-extras-tests.xml"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 65.42
+    }
+  ],
+  "status": "passed",
+  "collector_repair": "Initial model imports passed, but Ultralytics startup text prevented parsing the combined log. Post-install checks rerun with dedicated JSON and isolated configuration paths.",
+  "imports": {
+    "versions": {
+      "numpy": "1.26.4",
+      "opencv-python": "4.11.0.86",
+      "torch": "2.6.0",
+      "torchvision": "0.21.0",
+      "timm": "1.0.30",
+      "vggt-omega": "0.0.1",
+      "ultralytics": "8.4.160",
+      "clip": "1.0",
+      "mujoco": "3.14.0",
+      "pin": "2.7.0",
+      "robot-control": "0.1.0",
+      "openai-codex": "0.156.1"
+    },
+    "source_paths": {
+      "vggt_omega": "${SOURCE}/external/vggt_omega/vggt_omega/__init__.py",
+      "ultralytics": "${SOURCE}/external/ultralytics/ultralytics/__init__.py",
+      "robot_control": "${SOURCE}/external/robot_control/src/robot_control/__init__.py"
+    },
+    "tokenizer_tokens": 2,
+    "cuda_available": false
+  },
+  "test_suites": [
+    {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "3",
+      "tests": "310",
+      "time": "56.259",
+      "timestamp": "2026-10-14T02:40:12.253073+08:00"
+    }
+  ],
+  "schema_version": 1,
+  "date": "2026-10-14",
+  "scope": "Complete pinned source archives with new editable macOS environment; anonymous recursive Git clone, native Linux CUDA and checkpoint inference are not verified.",
+  "test_results": {
+    "passed": 307,
+    "skipped": 3,
+    "real_model_tests_deselected": 2,
+    "pytest_seconds": 56.6
+  },
+  "skipped_tests": [
+    "test_derived_stage3_scene_exact_episode",
+    "test_physical_gripper_automatically_attaches_only_on_bilateral_contact",
+    "test_randomized_stage_resets_and_exact_restores_nominal"
+  ],
+  "default_model_preflight": {
+    "exit_code": 1,
+    "backends": {
+      "vggt": "local",
+      "sam3": "local"
+    },
+    "requested_device": "cuda",
+    "inference_verified": false,
+    "expected_errors": [
+      "Both local checkpoints are absent",
+      "Source archives do not contain initialized .git metadata",
+      "CUDA is unavailable"
+    ],
+    "missing_dependency_errors": []
+  },
+  "source_archives_verified": [
+    {
+      "source": "https://codeload.github.com/facebookresearch/vggt-omega/tar.gz/48b23c8ce72c9a8fcf987f0d7f43d8e4870759f6",
+      "commit": "48b23c8ce72c9a8fcf987f0d7f43d8e4870759f6",
+      "commit_tree_sha": "d3a0000eb234137ab80217c7686f3ce91fe5b035",
+      "archive_sha256": "7ee9d87cb0ab0efc42d9092332d3e0809ef379bafe2c7c293354378a5657793c",
+      "files_verified": 113,
+      "bytes_verified": 47401823,
+      "all_git_blobs_match": true,
+      "status": "passed",
+      "files": [
+        {
+          "path": ".gitignore",
+          "blob_sha": "7527761962d0c72c7290fd4888360093dbda3f43",
+          "bytes": 310
+        },
+        {
+          "path": "LICENSE",
+          "blob_sha": "01465aec627c2698f972ca68abcabf54a497db14",
+          "bytes": 11720
+        },
+        {
+          "path": "README.md",
+          "blob_sha": "e7cbef02dc3a2cbf89d4478639cd18bb05a1f9e4",
+          "bytes": 7666
+        },
+        {
+          "path": "demo_gradio.py",
+          "blob_sha": "d322c31bf426b482ca8c4773324a7b7e0ff6a8e9",
+          "bytes": 19320
+        },
+        {
+          "path": "eval/README.md",
+          "blob_sha": "2e01d7318a033a528170a9359aa8350efe9f1b59",
+          "bytes": 1601
+        },
+        {
+          "path": "eval/datasets.py",
+          "blob_sha": "6be456f82c2e52da0e76ecdcdbd40db567b669d7",
+          "bytes": 2081
+        },
+        {
+          "path": "eval/evaluate.py",
+          "blob_sha": "cd01f7a2422a9d87e5eba8880b0a39800a9496aa",
+          "bytes": 4085
+        },
+        {
+          "path": "eval/frames/eth3d.json",
+          "blob_sha": "90d760940fecd4b1ffdd4e2a8740d9e59067d7ec",
+          "bytes": 1248
+        },
+        {
+          "path": "eval/frames/sintel.json",
+          "blob_sha": "7396a610d0edf793fcf0bee8812e65eb0751fa04",
+          "bytes": 1571
+        },
+        {
+          "path": "eval/metrics.py",
+          "blob_sha": "552f02f7acef9952a26f562c9d6ec5c017b46e72",
+          "bytes": 7494
+        },
+        {
+          "path": "eval/model.py",
+          "blob_sha": "01bb191adbb3ba3c313692ed8c9b9a2f8f9a1863",
+          "bytes": 3002
+        },
+        {
+          "path": "eval/prepare.py",
+          "blob_sha": "990a883cab7a9564187110d1de8c042959200d72",
+          "bytes": 22142
+        },
+        {
+          "path": "eval/requirements.txt",
+          "blob_sha": "67287f5a1b13b345514762bc353c8e667d4df3e4",
+          "bytes": 22
+        },
+        {
+          "path": "examples/desert_road.mp4",
+          "blob_sha": "67120eb9561db985f4b0982e3b60e7bf8414a5f8",
+          "bytes": 6539814
+        },
+        {
+          "path": "examples/forest_road.mp4",
+          "blob_sha": "06adcb0095f6d384d615467d9fddd04c0b33ca18",
+          "bytes": 10681415
+        },
+        {
+          "path": "examples/lake_speedboat.mp4",
+          "blob_sha": "177413b053c6d8862fc1c41933a63a48674de90d",
+          "bytes": 4790715
+        },
+        {
+          "path": "examples/snow_lift.mp4",
+          "blob_sha": "2472ec850443f0207e8d8dcc710c5591d98a5784",
+          "bytes": 20177803
+        },
+        {
+          "path": "pyproject.toml",
+          "blob_sha": "89402e812261822b18ddf6ad290bcdfd6dc5d967",
+          "bytes": 1004
+        },
+        {
+          "path": "reproduction.md",
+          "blob_sha": "624cfa82dea6e3c05c742e685c09d0e0a8f649a0",
+          "bytes": 12917
+        },
+        {
+          "path": "requirements.txt",
+          "blob_sha": "2103813bc516e1589864e219f1bb69c808b185c2",
+          "bytes": 77
+        },
+        {
+          "path": "requirements_demo.txt",
+          "blob_sha": "74e804a1f61e65b6d815491ccc3a8e376477a25c",
+          "bytes": 97
+        },
+        {
+          "path": "training/README.md",
+          "blob_sha": "36f0b8a9517a9a68b6c6b50ec119b21153f27928",
+          "bytes": 6821
+        },
+        {
+          "path": "training/__init__.py",
+          "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        {
+          "path": "training/config/default.yaml",
+          "blob_sha": "b02e1b3c523e4c55b91d705e5ced96b0854d9dc9",
+          "bytes": 7419
+        },
+        {
+          "path": "training/config/default_dataset.yaml",
+          "blob_sha": "6476ce3188159bf4244c9ccc968f1c7db83a81c6",
+          "bytes": 2264
+        },
+        {
+          "path": "training/consolidate_checkpoint.py",
+          "blob_sha": "10cdb932983b8344b3d3fda25b619282dfb7bea1",
+          "bytes": 2507
+        },
+        {
+          "path": "training/curation/README.md",
+          "blob_sha": "747e4525ca94b61ed4a6107e03328a8d576a1283",
+          "bytes": 3446
+        },
+        {
+          "path": "training/curation/__init__.py",
+          "blob_sha": "f31a7d853cf195a3a6edecaa9ec5a424a567a907",
+          "bytes": 1830
+        },
+        {
+          "path": "training/curation/compute_metrics.py",
+          "blob_sha": "18524990bacea1bc8e917d21858e70f8b9970fb0",
+          "bytes": 30132
+        },
+        {
+          "path": "training/curation/curate.py",
+          "blob_sha": "4689540083796fd056c030870539d9977693ba32",
+          "bytes": 4980
+        },
+        {
+          "path": "training/curation/ensemble.py",
+          "blob_sha": "a8d9bed1834c5c8b3f2d6317c979019185ae60f1",
+          "bytes": 13493
+        },
+        {
+          "path": "training/curation/ensemble_config.json",
+          "blob_sha": "036bb07f12276ce94c03d04ebcd65abf50b512da",
+          "bytes": 933
+        },
+        {
+          "path": "training/curation/train.py",
+          "blob_sha": "369bc4e77f3a1fbd13f569f1e930c50d135baebe",
+          "bytes": 4926
+        },
+        {
+          "path": "training/curation/unified_io.py",
+          "blob_sha": "73464e598181dfbe490d6467064b2d078b5f251d",
+          "bytes": 6365
+        },
+        {
+          "path": "training/data/__init__.py",
+          "blob_sha": "06980a0edf46aed198b05488cc43ce4f0ab8989f",
+          "bytes": 57
+        },
+        {
+          "path": "training/data/augmentation.py",
+          "blob_sha": "b5ca073950af28c2cf6c83b5da9f5c2b282f2657",
+          "bytes": 5527
+        },
+        {
+          "path": "training/data/base_dataset.py",
+          "blob_sha": "f7e68d0aaecac6cb4ce98840f058b020922bd995",
+          "bytes": 23217
+        },
+        {
+          "path": "training/data/composed_dataset.py",
+          "blob_sha": "b00964ade9c3ed695fc3d97c56d5bbc4c9aefb82",
+          "bytes": 6445
+        },
+        {
+          "path": "training/data/dataset_util.py",
+          "blob_sha": "c35e726b01ce9cae4ce8d3d8e7bc327bbf31a579",
+          "bytes": 21996
+        },
+        {
+          "path": "training/data/datasets/__init__.py",
+          "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        {
+          "path": "training/data/datasets/unified.py",
+          "blob_sha": "1fc547d913a5a84a5ed4fe9ff2ba8da8ccbbc951",
+          "bytes": 27201
+        },
+        {
+          "path": "training/data/datasets/unified_helper.py",
+          "blob_sha": "1911042950ff07f3ec69737898f4b77dc58f38ed",
+          "bytes": 9533
+        },
+        {
+          "path": "training/data/dynamic_dataloader.py",
+          "blob_sha": "0825aaaf9adc93c081087f53e0ad7e65e233966b",
+          "bytes": 8887
+        },
+        {
+          "path": "training/data/geometry.py",
+          "blob_sha": "b64eb9200a5738b3422bc3bc222955fa139835ba",
+          "bytes": 2695
+        },
+        {
+          "path": "training/data/rotation_util.py",
+          "blob_sha": "8e107177856d583ea1fba5d16cb3ca1b7a435379",
+          "bytes": 2409
+        },
+        {
+          "path": "training/data/sampler_configs.py",
+          "blob_sha": "c3d657c715dd0479d53854050f011c394783a7a4",
+          "bytes": 668
+        },
+        {
+          "path": "training/data/track_util.py",
+          "blob_sha": "e51beb9f9eff30964c40ad804937eaf46ea8b50b",
+          "bytes": 3885
+        },
+        {
+          "path": "training/data/worker_fn.py",
+          "blob_sha": "0307b611cd6e9d83a82bf97e4fa683336663d441",
+          "bytes": 792
+        },
+        {
+          "path": "training/dataset_preparation/README.md",
+          "blob_sha": "f353a66451a9897dbb7e9f1434e170b31c2d310c",
+          "bytes": 5121
+        },
+        {
+          "path": "training/dataset_preparation/clean.md",
+          "blob_sha": "e3fd1926f4d256d774115bfd10e20a2689a9e8fd",
+          "bytes": 26017
+        },
+        {
+          "path": "training/dataset_preparation/download_and_convert.md",
+          "blob_sha": "d9f8c78918d81dd61d8dd99b6ccb096fc0829a47",
+          "bytes": 32027
+        },
+        {
+          "path": "training/dataset_preparation/visualize_and_review.md",
+          "blob_sha": "3ee9515897dd08197a1ae17d1b9050b811955ac8",
+          "bytes": 6898
+        },
+        {
+          "path": "training/dataset_preparation/visualize_dataset_template.py",
+          "blob_sha": "7a0fe35dcc6c970079c4b456075c482924330f62",
+          "bytes": 32888
+        },
+        {
+          "path": "training/launch.py",
+          "blob_sha": "51abcabc291c843e87e2c594a00dd5f82c70ee45",
+          "bytes": 1464
+        },
+        {
+          "path": "training/losses/__init__.py",
+          "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        {
+          "path": "training/losses/base_loss/__init__.py",
+          "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        {
+          "path": "training/losses/base_loss/camera.py",
+          "blob_sha": "39f8a1700c3521a231dca2d497083b54e458676a",
+          "bytes": 9127
+        },
+        {
+          "path": "training/losses/base_loss/consistency.py",
+          "blob_sha": "7f6d85a6c3f06027dda511f046a0e87cc921d461",
+          "bytes": 3318
+        },
+        {
+          "path": "training/losses/base_loss/depth.py",
+          "blob_sha": "b911800894f3d9f35a4371ce1721237222b153fa",
+          "bytes": 10952
+        },
+        {
+          "path": "training/losses/base_loss/gradient.py",
+          "blob_sha": "46b0d9eea1db64f3a53917ab79e22b4e610d3445",
+          "bytes": 11089
+        },
+        {
+          "path": "training/losses/base_loss/point.py",
+          "blob_sha": "ba1a1f260007d37a60c6c1dba80a81af41d5838a",
+          "bytes": 3829
+        },
+        {
+          "path": "training/losses/gt_normalization.py",
+          "blob_sha": "6bc61f7556589c919fc7d9f5e36eed3252d593ff",
+          "bytes": 1559
+        },
+        {
+          "path": "training/losses/loss.py",
+          "blob_sha": "afbbc2fdbf8d9db8ec677d80c4640a8c5b85c526",
+          "bytes": 5500
+        },
+        {
+          "path": "training/losses/metric.py",
+          "blob_sha": "8ce9cf354901ddc3e6731454760eb1f4575c2a64",
+          "bytes": 2715
+        },
+        {
+          "path": "training/losses/normalization.py",
+          "blob_sha": "a0787c9f067879bdd8df237ae4651b5655987e82",
+          "bytes": 2356
+        },
+        {
+          "path": "training/losses/unprojection.py",
+          "blob_sha": "50872448f2dc447da1bb19a7c3b7b617693fae99",
+          "bytes": 2215
+        },
+        {
+          "path": "training/train_utils/__init__.py",
+          "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "bytes": 0
+        },
+        {
+          "path": "training/train_utils/checkpoint.py",
+          "blob_sha": "0563d265dfa67c9f2322bb1bdd2bbbe441e2c00b",
+          "bytes": 6403
+        },
+        {
+          "path": "training/train_utils/distributed.py",
+          "blob_sha": "cdd8e84ece821a1474e3a3f48b4dcc8a19b0c79d",
+          "bytes": 1009
+        },
+        {
+          "path": "training/train_utils/freeze.py",
+          "blob_sha": "99885829f5d43df14fce6a0b8a967a2ba8c91488",
+          "bytes": 2270
+        },
+        {
+          "path": "training/train_utils/fsdp.py",
+          "blob_sha": "d5e5e29601c2c45f8c27f0e795294b87a7635a05",
+          "bytes": 8993
+        },
+        {
+          "path": "training/train_utils/general.py",
+          "blob_sha": "7902d6ddd6e36e31e2c5af7f6e2dce7b659fa958",
+          "bytes": 5738
+        },
+        {
+          "path": "training/train_utils/gradient_clip.py",
+          "blob_sha": "6f8271efbd22c7c7b887e5037681b411a36544e6",
+          "bytes": 3003
+        },
+        {
+          "path": "training/train_utils/logging.py",
+          "blob_sha": "bb54d6150cc298e88c519b43cdaafd969ef9ab32",
+          "bytes": 1455
+        },
+        {
+          "path": "training/train_utils/normalization.py",
+          "blob_sha": "f43abf402ba8bf0e8d78c7858dde5c07e206ba32",
+          "bytes": 9266
+        },
+        {
+          "path": "training/train_utils/optimizer.py",
+          "blob_sha": "1af42b72204d9d928b98fa7e1cd23dbe59f084b4",
+          "bytes": 10424
+        },
+        {
+          "path": "training/train_utils/tb_writer.py",
+          "blob_sha": "66ec95ce93a61c2125f73d8620f27e18d2ed3590",
+          "bytes": 1565
+        },
+        {
+          "path": "training/trainer.py",
+          "blob_sha": "fc907f37fd50801e67454aabca2a2a216fc10cbe",
+          "bytes": 33328
+        },
+        {
+          "path": "training/trainer_conf.py",
+          "blob_sha": "feaffab7e6947de3bb368a3dbd702806b3e66c22",
+          "bytes": 2185
+        },
+        {
+          "path": "training/trainer_utils.py",
+          "blob_sha": "a9b0f51aed3f7ecc3e0c238723626576511a554d",
+          "bytes": 1469
+        },
+        {
+          "path": "training/valid_seqs/dl3dv.txt",
+          "blob_sha": "e0d649006a8d83a1d7f0e12ad757c842aa0cf897",
+          "bytes": 540385
+        },
+        {
+          "path": "training/valid_seqs/eden.txt",
+          "blob_sha": "bf2ff538b27cb0c34e0fda4d127572f7cc0066da",
+          "bytes": 9258
+        },
+        {
+          "path": "training/valid_seqs/hypersim.txt",
+          "blob_sha": "86c73d9e94eae21a820bc306daf0bcdda74f7f11",
+          "bytes": 4248
+        },
+        {
+          "path": "training/valid_seqs/megasynth.txt",
+          "blob_sha": "7aa86a2f1352df0d0e4b7a6984f45d7b7477626b",
+          "bytes": 2485475
+        },
+        {
+          "path": "training/valid_seqs/midair.txt",
+          "blob_sha": "70f125d811e939d4b7ad4c338cdd36931fa37ddd",
+          "bytes": 6924
+        },
+        {
+          "path": "training/valid_seqs/mvssynth.txt",
+          "blob_sha": "63c5c63c9facf794df9a33c714ec1cb65474c285",
+          "bytes": 600
+        },
+        {
+          "path": "training/valid_seqs/sailvos.txt",
+          "blob_sha": "1fffdceb76ce84e66d88fdd1436aa47f073675a9",
+          "bytes": 1813
+        },
+        {
+          "path": "training/valid_seqs/uco3d.txt",
+          "blob_sha": "8b27fe8b8503d443e1a0ddd01243d264791b52ee",
+          "bytes": 1513728
+        },
+        {
+          "path": "vggt_omega/__init__.py",
+          "blob_sha": "d22e291ac1dd0f24161f5c865f8f21b445b2eb43",
+          "bytes": 329
+        },
+        {
+          "path": "vggt_omega/models/__init__.py",
+          "blob_sha": "1261acbf607bb88e13868428199eaaa883cacc6e",
+          "bytes": 258
+        },
+        {
+          "path": "vggt_omega/models/aggregator.py",
+          "blob_sha": "09ea54a596b32e53c1b576a1c121fa6b95b84782",
+          "bytes": 9893
+        },
+        {
+          "path": "vggt_omega/models/heads/__init__.py",
+          "blob_sha": "72644b0c06ed0b3844e475baf660ad558d446f95",
+          "bytes": 380
+        },
+        {
+          "path": "vggt_omega/models/heads/camera_head.py",
+          "blob_sha": "31d1406c5168339d65b7e1fdbaed457373ce4a71",
+          "bytes": 3045
+        },
+        {
+          "path": "vggt_omega/models/heads/dense_head.py",
+          "blob_sha": "4713aa5b5361fd30a215169da8b4c0f1d7810a2c",
+          "bytes": 12054
+        },
+        {
+          "path": "vggt_omega/models/heads/text_alignment_head.py",
+          "blob_sha": "3182f1b46939bc076791b9dbe64954f661155155",
+          "bytes": 3113
+        },
+        {
+          "path": "vggt_omega/models/heads/utils.py",
+          "blob_sha": "2a2af55281e514d94a934e8b9213ba64f6a39686",
+          "bytes": 3919
+        },
+        {
+          "path": "vggt_omega/models/layers/__init__.py",
+          "blob_sha": "8064d1d33c4783c5d3b715499bf88df817e5459a",
+          "bytes": 793
+        },
+        {
+          "path": "vggt_omega/models/layers/attention.py",
+          "blob_sha": "e8a0d1c0a13c8aac9d3368e42452e1efc3dcfa92",
+          "bytes": 7087
+        },
+        {
+          "path": "vggt_omega/models/layers/block.py",
+          "blob_sha": "1a2b22430562b9969e3dcb1b774ac45c6c6cc4a1",
+          "bytes": 10677
+        },
+        {
+          "path": "vggt_omega/models/layers/ffn_layers.py",
+          "blob_sha": "1770fb1469813cfa75aa1f15c8bd62525ae6c863",
+          "bytes": 2784
+        },
+        {
+          "path": "vggt_omega/models/layers/layer_scale.py",
+          "blob_sha": "fa6358cc1b064cd73f44a6a12246309892830350",
+          "bytes": 1030
+        },
+        {
+          "path": "vggt_omega/models/layers/patch_embed.py",
+          "blob_sha": "195ff75fb01e5f3724bb3e4b0839aa2e3ed347d6",
+          "bytes": 3074
+        },
+        {
+          "path": "vggt_omega/models/layers/rms_norm.py",
+          "blob_sha": "7c635bc7c0c9bc291a726b7fec191b3ef8afa617",
+          "bytes": 921
+        },
+        {
+          "path": "vggt_omega/models/layers/rope_position_encoding.py",
+          "blob_sha": "9fd9091a2db82e418ae04b93825a32a1f0524120",
+          "bytes": 5504
+        },
+        {
+          "path": "vggt_omega/models/layers/utils.py",
+          "blob_sha": "1d4d07c894caddbd2dde6823307565c2583b3624",
+          "bytes": 4098
+        },
+        {
+          "path": "vggt_omega/models/layers/vision_transformer.py",
+          "blob_sha": "1d50d8adda1b70830700123ad80609cf1170be0a",
+          "bytes": 15693
+        },
+        {
+          "path": "vggt_omega/models/vggt_omega.py",
+          "blob_sha": "b3973c8ea37973c2d2dc22ab034fc12fb92eec41",
+          "bytes": 3747
+        },
+        {
+          "path": "vggt_omega/utils/__init__.py",
+          "blob_sha": "b3aaf589688cf49f971b751429502ce8e4c140b6",
+          "bytes": 251
+        },
+        {
+          "path": "vggt_omega/utils/geometry.py",
+          "blob_sha": "342a26cd959613085b6f98b59788cfc6c8840723",
+          "bytes": 1035
+        },
+        {
+          "path": "vggt_omega/utils/load_fn.py",
+          "blob_sha": "e5fdffafa6907064b920b8d0c6ae7b9847ea6401",
+          "bytes": 4699
+        },
+        {
+          "path": "vggt_omega/utils/pose_enc.py",
+          "blob_sha": "6732482a946f23d7fe9bf7f20f838d2d668e8df8",
+          "bytes": 1800
+        },
+        {
+          "path": "vggt_omega/utils/rotation.py",
+          "blob_sha": "2fb8470707f41adc236334bc5605db060807b620",
+          "bytes": 4482
+        },
+        {
+          "path": "visual_util.py",
+          "blob_sha": "9d5e8d2cefebc37f07eb46f528625ac0edb7cb36",
+          "bytes": 10011
+        }
+      ]
+    },
+    {
+      "source": "https://codeload.github.com/agilexrobotics/piper_isaac_sim/tar.gz/8e1f88fdb7afca49c40e9a0c1c01cc588e86f0d2",
+      "commit": "8e1f88fdb7afca49c40e9a0c1c01cc588e86f0d2",
+      "commit_tree_sha": "82109f1511cb0f3812fc0ce1ce1ebdde859811b3",
+      "archive_sha256": "0766ca86dacf2e3632bc2052cb10569c9a8dbd9765600019e03c8c87694c21c2",
+      "files_verified": 252,
+      "bytes_verified": 577833699,
+      "all_git_blobs_match": true,
+      "status": "passed",
+      "files": [
+        {
+          "path": "README.md",
+          "blob_sha": "cceb7289f06e7ea6592940115e2837acaeaac1a1",
+          "bytes": 712
+        },
+        {
+          "path": "USD/piper_h_v1.usd",
+          "blob_sha": "37781bf7c941f6d5a9dc2abe84a5f8bc571c8bb9",
+          "bytes": 12378
+        },
+        {
+          "path": "USD/piper_l_v1.usd",
+          "blob_sha": "254f6f28ce955ec692da186d3a36670ce2614b5b",
+          "bytes": 11633
+        },
+        {
+          "path": "USD/piper_v1.usd",
+          "blob_sha": "ac0cdf5d1d87899a570f2b29d0444149507d65fe",
+          "bytes": 11988
+        },
+        {
+          "path": "USD/piper_v2.usd",
+          "blob_sha": "6a6b940e3d8bbf2262fe85b269e5be33954385c6",
+          "bytes": 5368
+        },
+        {
+          "path": "USD/piper_x_v1.usd",
+          "blob_sha": "0f33e0824271c43d92aa560cca0174db1d73a42d",
+          "bytes": 19090
+        },
+        {
+          "path": "img/isaac_1.png",
+          "blob_sha": "d3a87532cfa48faad520cb395b770195e8f5f199",
+          "bytes": 367389
+        },
+        {
+          "path": "img/isaac_2.png",
+          "blob_sha": "3126a42c4554a324c939e3fbf3a05d0430093400",
+          "bytes": 59116
+        },
+        {
+          "path": "img/isaac_3.png",
+          "blob_sha": "78d61cda809669b81f8d80cfcda5b60d8cacfeb4",
+          "bytes": 252259
+        },
+        {
+          "path": "img/isaac_5.png",
+          "blob_sha": "b9439bce5b7255c1f5e3e941a433772f75efcbc4",
+          "bytes": 159528
+        },
+        {
+          "path": "img/isaac_6.png",
+          "blob_sha": "503b66cf55a99990c7bdbeb5844f4d11db566ce1",
+          "bytes": 238092
+        },
+        {
+          "path": "img/isaac_7.png",
+          "blob_sha": "d6bc890152c8fd36764cbacc157270e4aed0b937",
+          "bytes": 346759
+        },
+        {
+          "path": "img/isaac_8.png",
+          "blob_sha": "cb944e0e96663ee754e1c09b1eb8007f005243f1",
+          "bytes": 353776
+        },
+        {
+          "path": "img/isacc_4.png",
+          "blob_sha": "7d7e29437628db7cb5d96873812757543232e4d4",
+          "bytes": 277931
+        },
+        {
+          "path": "img/piper_h.png",
+          "blob_sha": "64ea1a98d979a4f1aae741efe6e6bb2e248a2a3d",
+          "bytes": 201345
+        },
+        {
+          "path": "img/start_isaac.png",
+          "blob_sha": "9bfe8d7dd7c40a2ea7e171cdf39df251dc82d6d5",
+          "bytes": 48807
+        },
+        {
+          "path": "piper_description/CMakeLists.txt",
+          "blob_sha": "72ae4763ca6b216e99ece6d14e0c3cea9ae48c2e",
+          "bytes": 1156
+        },
+        {
+          "path": "piper_description/launch/piper_no_gripper/display_no_gripper_urdf.launch.py",
+          "blob_sha": "94a9077d8e9dcc34c4272e10f8d812d393bfe04e",
+          "bytes": 2500
+        },
+        {
+          "path": "piper_description/launch/piper_no_gripper/display_no_gripper_xacro.launch.py",
+          "blob_sha": "b95c39de3c25433d7561fac29dd1eb18650812ac",
+          "bytes": 2501
+        },
+        {
+          "path": "piper_description/launch/piper_with_gripper/display_urdf.launch.py",
+          "blob_sha": "ef1da624d8c8d9102a4a51a0ebf599399caa65f0",
+          "bytes": 2484
+        },
+        {
+          "path": "piper_description/launch/piper_with_gripper/display_xacro.launch.py",
+          "blob_sha": "ab1721c7444816c3611acc6301a7e2fbc0f06a53",
+          "bytes": 2505
+        },
+        {
+          "path": "piper_description/meshes/base_link.STL",
+          "blob_sha": "e8994c1c2afa33c6b3081b6cc19ae65d5e129820",
+          "bytes": 607384
+        },
+        {
+          "path": "piper_description/meshes/dae/base_link.dae",
+          "blob_sha": "1d212e8afe036599e8d02cefeb7fed3a9107a117",
+          "bytes": 934237
+        },
+        {
+          "path": "piper_description/meshes/dae/camera.dae",
+          "blob_sha": "a9cfe7d82e8711db00fe68836c3fd5590bd114f8",
+          "bytes": 7448010
+        },
+        {
+          "path": "piper_description/meshes/dae/camera_v2.dae",
+          "blob_sha": "004c4a4e97c91cf6811edc3545413defa5f76243",
+          "bytes": 5276066
+        },
+        {
+          "path": "piper_description/meshes/dae/camera_v3.dae",
+          "blob_sha": "ef93656f57cb1cf99257bb89eefac5f4a307a1d9",
+          "bytes": 5280711
+        },
+        {
+          "path": "piper_description/meshes/dae/gripper_base_100_v2.dae",
+          "blob_sha": "ac7ebe708c21bc43ec4cbd0c062d0dc2951b39b3",
+          "bytes": 3759853
+        },
+        {
+          "path": "piper_description/meshes/dae/link1.dae",
+          "blob_sha": "1293410f46f1d9468afbcb1a5b57f38443b3ab58",
+          "bytes": 1756520
+        },
+        {
+          "path": "piper_description/meshes/dae/link2.dae",
+          "blob_sha": "e9ab27404de12577df5027b4faf702a09349139d",
+          "bytes": 6053490
+        },
+        {
+          "path": "piper_description/meshes/dae/link3.dae",
+          "blob_sha": "f22b59098363746075470586b7d554e36dfaab4e",
+          "bytes": 4869700
+        },
+        {
+          "path": "piper_description/meshes/dae/link4.dae",
+          "blob_sha": "25811c594d40993fac1cca1528d447042c2e5fab",
+          "bytes": 1189463
+        },
+        {
+          "path": "piper_description/meshes/dae/link5.dae",
+          "blob_sha": "8fcbef9a300472e8df1417b0c2894a30f0bdb7c3",
+          "bytes": 1981489
+        },
+        {
+          "path": "piper_description/meshes/dae/link6.dae",
+          "blob_sha": "29bb7e76c37e1d19c6b82b933f7f49b883c65b34",
+          "bytes": 1872101
+        },
+        {
+          "path": "piper_description/meshes/dae/link6_.dae",
+          "blob_sha": "d6832a2a6216f627ee193d94cc31dc51ef33944f",
+          "bytes": 1169868
+        },
+        {
+          "path": "piper_description/meshes/dae/link7.dae",
+          "blob_sha": "354a5ea6a6024640b340b07d6168875b6fe72c42",
+          "bytes": 162800
+        },
+        {
+          "path": "piper_description/meshes/dae/link8.dae",
+          "blob_sha": "de95a4ef73978830ca212d4a8c4d817ec4aada0a",
+          "bytes": 167576
+        },
+        {
+          "path": "piper_description/meshes/dae/realsense_mid_stand.dae",
+          "blob_sha": "567e99a80f656265d86adf3869c1b195a1c75e24",
+          "bytes": 713245
+        },
+        {
+          "path": "piper_description/meshes/gripper_base.STL",
+          "blob_sha": "28daca350341e095609ccc03c5e01e751469f84b",
+          "bytes": 649484
+        },
+        {
+          "path": "piper_description/meshes/link1.STL",
+          "blob_sha": "ae7c69e8c8ea7544e6754c5fdf4dbb70b36bc64d",
+          "bytes": 447784
+        },
+        {
+          "path": "piper_description/meshes/link2.STL",
+          "blob_sha": "6ba4adce1db17ce6254975bc3bc3d6184563fb99",
+          "bytes": 3658384
+        },
+        {
+          "path": "piper_description/meshes/link3.STL",
+          "blob_sha": "481f682b9c3dbc4aff4202cafd33db0887d42c68",
+          "bytes": 1845784
+        },
+        {
+          "path": "piper_description/meshes/link4.STL",
+          "blob_sha": "6076bb9e7a05cff1473d06d1f66a514de3971f46",
+          "bytes": 877984
+        },
+        {
+          "path": "piper_description/meshes/link5.STL",
+          "blob_sha": "ab9f523252b7a6d61fb7cb7731d587af98201ecf",
+          "bytes": 833684
+        },
+        {
+          "path": "piper_description/meshes/link6.STL",
+          "blob_sha": "b879dc1ed61aa4503ccd50561d52cb22b13237fd",
+          "bytes": 58884
+        },
+        {
+          "path": "piper_description/meshes/link7.STL",
+          "blob_sha": "a30d8f2e44a81db32a1f7a0e06eb87416b5cb60a",
+          "bytes": 104384
+        },
+        {
+          "path": "piper_description/meshes/link8.STL",
+          "blob_sha": "be37a66e4cfce7c4254ce817f4fb2c51f44a5701",
+          "bytes": 104384
+        },
+        {
+          "path": "piper_description/mujoco_model/piper_description.xml",
+          "blob_sha": "6929448f168c49a4af82f1282ed1baf7a2dbdb70",
+          "bytes": 6423
+        },
+        {
+          "path": "piper_description/mujoco_model/piper_no_gripper_description.xml",
+          "blob_sha": "8c1a71ebaf97e6455c8e5f674fae2e29544e0246",
+          "bytes": 4630
+        },
+        {
+          "path": "piper_description/package.xml",
+          "blob_sha": "13a73f9df323ccb50f363326f6dc05e13aaa7d37",
+          "bytes": 901
+        },
+        {
+          "path": "piper_description/rviz/piper_ctrl.rviz",
+          "blob_sha": "f5e7e62ae9ad0a778960175faee55105198b2ad7",
+          "bytes": 6577
+        },
+        {
+          "path": "piper_description/rviz/piper_no_gripper.rviz",
+          "blob_sha": "b4d8471be48606351826dc2320e655ca01325634",
+          "bytes": 6243
+        },
+        {
+          "path": "piper_description/urdf/piper_description.csv",
+          "blob_sha": "8804f482ac92395d18110bc3afe6152ec12e65ad",
+          "bytes": 5290
+        },
+        {
+          "path": "piper_description/urdf/piper_description.urdf",
+          "blob_sha": "bf726ae9ca7822ab1f79ddc706f9719604a103f8",
+          "bytes": 12628
+        },
+        {
+          "path": "piper_description/urdf/piper_description.xacro",
+          "blob_sha": "a281139fc9fe9ebd63de1ff7c9938b02cc7989ce",
+          "bytes": 15106
+        },
+        {
+          "path": "piper_description/urdf/piper_description_gazebo.xacro",
+          "blob_sha": "a033e9dc158c004faecee45f3727dda28aa5e461",
+          "bytes": 17274
+        },
+        {
+          "path": "piper_description/urdf/piper_description_old.urdf",
+          "blob_sha": "9250ce0daa03518df928a1bb63c9089895318458",
+          "bytes": 12521
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_camera.urdf",
+          "blob_sha": "565765ca00d68a04a7a384a1fdc69fc07e5e3a10",
+          "bytes": 12712
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_camera/configuration/piper_description_v100_camera_base.usd",
+          "blob_sha": "17309c205b3510f90e26c2de503709ad30c8380b",
+          "bytes": 31274409
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_camera/configuration/piper_description_v100_camera_physics.usd",
+          "blob_sha": "d630143898f15f8e2b18c2e1b020eb3db7127946",
+          "bytes": 6239
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_camera/configuration/piper_description_v100_camera_robot.usd",
+          "blob_sha": "88032411759f01bdd4787dcf05afd6f2a51b0b2f",
+          "bytes": 1792
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_camera/configuration/piper_description_v100_camera_sensor.usd",
+          "blob_sha": "96ffdf57c264924d55745a4474de63b3da4e7732",
+          "bytes": 652
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_camera/piper_description_v100_camera.usd",
+          "blob_sha": "12de0d9b050e8b8a81333191bc8508ea552c4bda",
+          "bytes": 1481
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_realsense_camera.urdf",
+          "blob_sha": "958576171fe63e067a09a55d3aa34d865dbc98a8",
+          "bytes": 13142
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_realsense_camera_v2.urdf",
+          "blob_sha": "d8933637a1535f132271938d6d768830a7b7bd30",
+          "bytes": 12070
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_realsense_camera_v2/configuration/piper_description_v100_realsense_camera_v2_base.usd",
+          "blob_sha": "a6c2a79d356e380f74c8aea386b37b6f41cb2352",
+          "bytes": 41020584
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_realsense_camera_v2/configuration/piper_description_v100_realsense_camera_v2_physics.usd",
+          "blob_sha": "8b926d2f1fde4e50e2ca1522fe91627ac40e956a",
+          "bytes": 6209
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_realsense_camera_v2/configuration/piper_description_v100_realsense_camera_v2_robot.usd",
+          "blob_sha": "7faca9f31b85eaea869d277eda92dd5e5204160a",
+          "bytes": 1789
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_realsense_camera_v2/configuration/piper_description_v100_realsense_camera_v2_sensor.usd",
+          "blob_sha": "96ffdf57c264924d55745a4474de63b3da4e7732",
+          "bytes": 652
+        },
+        {
+          "path": "piper_description/urdf/piper_description_v100_realsense_camera_v2/piper_description_v100_realsense_camera_v2.usd",
+          "blob_sha": "47796ccf5822d5afa4d48a3e0d0dd58367309586",
+          "bytes": 1493
+        },
+        {
+          "path": "piper_description/urdf/piper_no_gripper_description.csv",
+          "blob_sha": "00519dff6ee1b0c905a69067565af6f21411fe12",
+          "bytes": 4252
+        },
+        {
+          "path": "piper_description/urdf/piper_no_gripper_description.urdf",
+          "blob_sha": "dd02b8555daad22aed21435a055efa41b661accd",
+          "bytes": 8922
+        },
+        {
+          "path": "piper_description/urdf/piper_no_gripper_description.xacro",
+          "blob_sha": "cef237ca5c4516dbf968b074465bce1614226884",
+          "bytes": 10142
+        },
+        {
+          "path": "piper_description/urdf/piper_no_gripper_description_gazebo.xacro",
+          "blob_sha": "12cfa5ae5874d9eb3739b89170cc1a533b30545f",
+          "bytes": 12476
+        },
+        {
+          "path": "piper_description/urdf/piper_no_gripper_description_old.urdf",
+          "blob_sha": "bf88fd2ba16bcd29b981dbe31ff74f208238872c",
+          "bytes": 8815
+        },
+        {
+          "path": "piper_h_description/CMakeLists.txt",
+          "blob_sha": "5642f612a2a52e1ee99a50c06d71cdfa7bb0b31b",
+          "bytes": 1146
+        },
+        {
+          "path": "piper_h_description/config/joint_name_piper_h_description.yaml",
+          "blob_sha": "333c13ad91fb46c3f8106dc49a420c46740dcd8b",
+          "bytes": 92
+        },
+        {
+          "path": "piper_h_description/export.log",
+          "blob_sha": "14ec18a0e427b3fba9cf57b735bd3848b4c631bb",
+          "bytes": 344266
+        },
+        {
+          "path": "piper_h_description/launch/display.launch",
+          "blob_sha": "ff25946ced986a766a1a1d99bd55052415dbda5b",
+          "bytes": 518
+        },
+        {
+          "path": "piper_h_description/launch/display_urdf.launch.py",
+          "blob_sha": "2a591f5059c838dc0c0a9b3691699b72207c189f",
+          "bytes": 2497
+        },
+        {
+          "path": "piper_h_description/launch/display_xacro.launch.py",
+          "blob_sha": "05de53308cc4facd831e9e685e70851a42e0eda8",
+          "bytes": 2488
+        },
+        {
+          "path": "piper_h_description/launch/gazebo.launch",
+          "blob_sha": "4cbc123aa5120cc70b833826a4754f8fcc12d83f",
+          "bytes": 585
+        },
+        {
+          "path": "piper_h_description/meshes/Link1.STL",
+          "blob_sha": "a20b033a132b178e8d622d28021faaf37810e257",
+          "bytes": 1095084
+        },
+        {
+          "path": "piper_h_description/meshes/Link2.STL",
+          "blob_sha": "f49613aadb198da9b298f42cb5c6c4e7ab9542b7",
+          "bytes": 3393284
+        },
+        {
+          "path": "piper_h_description/meshes/Link3.STL",
+          "blob_sha": "06fc056308e344ed27066e49576a7df149f96bb4",
+          "bytes": 2825684
+        },
+        {
+          "path": "piper_h_description/meshes/Link4.STL",
+          "blob_sha": "bbd622d87d39d5164f55cc824057e5c3cca4c2f0",
+          "bytes": 1160984
+        },
+        {
+          "path": "piper_h_description/meshes/Link5.STL",
+          "blob_sha": "e902b3355b635c6c4ffb96528b3266c5d65d7f90",
+          "bytes": 1097584
+        },
+        {
+          "path": "piper_h_description/meshes/Link6.STL",
+          "blob_sha": "cde884f9e229161a35ad885eed82bdf277252ade",
+          "bytes": 110784
+        },
+        {
+          "path": "piper_h_description/meshes/Link6.dae",
+          "blob_sha": "ef5a301f58934bdf0192fe1d459150efd9ccaca8",
+          "bytes": 227942
+        },
+        {
+          "path": "piper_h_description/meshes/base_link.STL",
+          "blob_sha": "2fe83fff5878f49c12f245a1677892928e968344",
+          "bytes": 622084
+        },
+        {
+          "path": "piper_h_description/meshes/dae/base_link.dae",
+          "blob_sha": "4f5614e8d6e400a347cbc660aa8c4b1939e03e05",
+          "bytes": 1076608
+        },
+        {
+          "path": "piper_h_description/meshes/dae/gripper_base_100_v3.dae",
+          "blob_sha": "feb91147207f3347c8c8dedb2d1e29e9ee94107d",
+          "bytes": 3771710
+        },
+        {
+          "path": "piper_h_description/meshes/dae/link1.dae",
+          "blob_sha": "ff31e155357ae5e235796776e5a75c9d4f084067",
+          "bytes": 1913416
+        },
+        {
+          "path": "piper_h_description/meshes/dae/link2.dae",
+          "blob_sha": "1027085ddf12de008c1eda6382cfba0ae970575c",
+          "bytes": 15108697
+        },
+        {
+          "path": "piper_h_description/meshes/dae/link3.dae",
+          "blob_sha": "5f91c1db6d5f59d1676d6530bbf6dc0b48118700",
+          "bytes": 6159283
+        },
+        {
+          "path": "piper_h_description/meshes/dae/link4.dae",
+          "blob_sha": "79feb3b633f399388396612348546d6f7de10eb2",
+          "bytes": 2236189
+        },
+        {
+          "path": "piper_h_description/meshes/dae/link5.dae",
+          "blob_sha": "44bf79905670c93cc78ca8df3f8e7d7b35ec8e77",
+          "bytes": 2148351
+        },
+        {
+          "path": "piper_h_description/meshes/dae/link6.dae",
+          "blob_sha": "88391520476ea798a45968630c930850de6491f4",
+          "bytes": 227972
+        },
+        {
+          "path": "piper_h_description/meshes/dae/link7.dae",
+          "blob_sha": "354a5ea6a6024640b340b07d6168875b6fe72c42",
+          "bytes": 162800
+        },
+        {
+          "path": "piper_h_description/meshes/dae/link8.dae",
+          "blob_sha": "de95a4ef73978830ca212d4a8c4d817ec4aada0a",
+          "bytes": 167576
+        },
+        {
+          "path": "piper_h_description/meshes/dae/realsense_mid_stand_v2.dae",
+          "blob_sha": "4017329455611bb98da455db435b8e8cf548dd66",
+          "bytes": 712911
+        },
+        {
+          "path": "piper_h_description/meshes/dark_dae/base_link.dae",
+          "blob_sha": "5356093b9d5c30b3e5299318efb6fcf6dce3f5c6",
+          "bytes": 1076608
+        },
+        {
+          "path": "piper_h_description/meshes/dark_dae/link1.dae",
+          "blob_sha": "ec87477fe800590abc99bc19d3a8e6b8b7300843",
+          "bytes": 1913416
+        },
+        {
+          "path": "piper_h_description/meshes/dark_dae/link2.dae",
+          "blob_sha": "65e3b709f0a57c0aca9c5da9c476ae89c2cba518",
+          "bytes": 15108835
+        },
+        {
+          "path": "piper_h_description/meshes/dark_dae/link3.dae",
+          "blob_sha": "ef84ff332d865e7df23f78f47e823e9ad9d92a06",
+          "bytes": 6159283
+        },
+        {
+          "path": "piper_h_description/meshes/dark_dae/link4.dae",
+          "blob_sha": "c1cd3221ce5c84be7869b3e93252e694af2d84c6",
+          "bytes": 2236189
+        },
+        {
+          "path": "piper_h_description/meshes/dark_dae/link5.dae",
+          "blob_sha": "b95bcf18fe7ab635419794a6c99a417c3baf6056",
+          "bytes": 2148351
+        },
+        {
+          "path": "piper_h_description/meshes/dark_dae/link6.dae",
+          "blob_sha": "3de9c499c2366131074c5a189fa5c67c596fab9d",
+          "bytes": 227972
+        },
+        {
+          "path": "piper_h_description/package.xml",
+          "blob_sha": "bd4d46a188234a406c858d22282a52c5b2267a98",
+          "bytes": 903
+        },
+        {
+          "path": "piper_h_description/piper_h.zip",
+          "blob_sha": "9bba9bc80edc64f0ed44bd1b20c5580d11d2a754",
+          "bytes": 3743888
+        },
+        {
+          "path": "piper_h_description/piper_h_description.docx",
+          "blob_sha": "b82de6a8b60f5140eabf87f7867e4f59bb2663fb",
+          "bytes": 1904197
+        },
+        {
+          "path": "piper_h_description/rviz/piper_ctrl.rviz",
+          "blob_sha": "b248fde16bb02fd069e68ab011b40e88423f7dfc",
+          "bytes": 6914
+        },
+        {
+          "path": "piper_h_description/rviz/piper_no_gripper.rviz",
+          "blob_sha": "b4d8471be48606351826dc2320e655ca01325634",
+          "bytes": 6243
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description.csv",
+          "blob_sha": "bfb8ce70e7b6533a6bc8da17b97b9124d87b0525",
+          "bytes": 3902
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description.urdf",
+          "blob_sha": "4fb7d0787429addf2c8f57be55a9877af481c2f0",
+          "bytes": 9369
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description.xacro",
+          "blob_sha": "dbecf998fc4aceb33967e1ba4a6b83ad0e13cb52",
+          "bytes": 13287
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description_d435.urdf",
+          "blob_sha": "bbfe969cb045ea675ed5d3f710c7c46db2edde88",
+          "bytes": 12333
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description_d435_dark.urdf",
+          "blob_sha": "c4b03464cc400fcdcc8ffdd3b4ff453510cc9480",
+          "bytes": 12395
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description_d435_dark/configuration/piper_h_description_d435_dark_base.usd",
+          "blob_sha": "0d52a59b87f4183a44ac8298a10afebcc1c12c58",
+          "bytes": 34862351
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description_d435_dark/configuration/piper_h_description_d435_dark_physics.usd",
+          "blob_sha": "273e8056d6b1f1f35dce9689a4229f3266c55579",
+          "bytes": 6108
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description_d435_dark/configuration/piper_h_description_d435_dark_robot.usd",
+          "blob_sha": "4adcbbb75159a60203ffbd13c7697b28eb044000",
+          "bytes": 1769
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description_d435_dark/configuration/piper_h_description_d435_dark_sensor.usd",
+          "blob_sha": "6af228a5de07b29083be8f2ea52820074a5e4b69",
+          "bytes": 654
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description_d435_dark/piper_h_description_d435_dark.usd",
+          "blob_sha": "45def3c5a55194e286b097ca8ca8b3bcf190eba7",
+          "bytes": 1486
+        },
+        {
+          "path": "piper_h_description/urdf/piper_h_description_dark.urdf",
+          "blob_sha": "31f2c63218881f193337f3aba980d58f91ae7267",
+          "bytes": 9369
+        },
+        {
+          "path": "piper_l_description/CMakeLists.txt",
+          "blob_sha": "406aca05d2e3d6d28744ebe8703c536c7bb4caf6",
+          "bytes": 1146
+        },
+        {
+          "path": "piper_l_description/config/joint_names_piper_l_description.yaml",
+          "blob_sha": "333c13ad91fb46c3f8106dc49a420c46740dcd8b",
+          "bytes": 92
+        },
+        {
+          "path": "piper_l_description/export.log",
+          "blob_sha": "02ec1157b2e854c0490190e45b3c56b7a3b65254",
+          "bytes": 456436
+        },
+        {
+          "path": "piper_l_description/launch/display.launch",
+          "blob_sha": "b12102bbb966075f42fa9228730b9834d3f5b2e8",
+          "bytes": 518
+        },
+        {
+          "path": "piper_l_description/launch/display_urdf.launch.py",
+          "blob_sha": "9efdd5e6beec1b254be0848c0662b6a66afccef5",
+          "bytes": 2497
+        },
+        {
+          "path": "piper_l_description/launch/display_xacro.launch.py",
+          "blob_sha": "59d381b91fa0a531d3dae29913c79be39f770aa7",
+          "bytes": 2488
+        },
+        {
+          "path": "piper_l_description/launch/gazebo.launch",
+          "blob_sha": "dbc707f80dc6ae799528a182168081f03df15e70",
+          "bytes": 585
+        },
+        {
+          "path": "piper_l_description/meshes/Link1.STL",
+          "blob_sha": "bcd3be6c46dab793a9d7a7a2453720de05079033",
+          "bytes": 1156284
+        },
+        {
+          "path": "piper_l_description/meshes/Link2.STL",
+          "blob_sha": "aed1c44edd4a719732777c8b7686afb3a9713709",
+          "bytes": 2639184
+        },
+        {
+          "path": "piper_l_description/meshes/Link3.STL",
+          "blob_sha": "b0013a5b9039e70c8108be4cc60e0eebf7ef87b3",
+          "bytes": 1786784
+        },
+        {
+          "path": "piper_l_description/meshes/Link4.STL",
+          "blob_sha": "22605b1f66aa06cea24a1ca6b5d14b485919a275",
+          "bytes": 1263184
+        },
+        {
+          "path": "piper_l_description/meshes/Link5.STL",
+          "blob_sha": "b7efb5964a1967dc72bcebe6a0a6ab17625444cd",
+          "bytes": 1235184
+        },
+        {
+          "path": "piper_l_description/meshes/Link6.STL",
+          "blob_sha": "c14f8ab306074790fef51fe9f4350812e976771b",
+          "bytes": 121584
+        },
+        {
+          "path": "piper_l_description/meshes/Link6.dae",
+          "blob_sha": "8d447e8fa9ed3e9b38fbc0ef0f1729537a1938b5",
+          "bytes": 234333
+        },
+        {
+          "path": "piper_l_description/meshes/base_link.STL",
+          "blob_sha": "b02ddf2fafb732abc7efeea1364019db443faa14",
+          "bytes": 1821884
+        },
+        {
+          "path": "piper_l_description/meshes/dae/base_link.dae",
+          "blob_sha": "3497385c93a0a03b629dd15c8481499ffda8fb9f",
+          "bytes": 3028184
+        },
+        {
+          "path": "piper_l_description/meshes/dae/gripper_base_100_v2.dae",
+          "blob_sha": "ac7ebe708c21bc43ec4cbd0c062d0dc2951b39b3",
+          "bytes": 3759853
+        },
+        {
+          "path": "piper_l_description/meshes/dae/gripper_base_100_v3.dae",
+          "blob_sha": "feb91147207f3347c8c8dedb2d1e29e9ee94107d",
+          "bytes": 3771710
+        },
+        {
+          "path": "piper_l_description/meshes/dae/link1.dae",
+          "blob_sha": "b6f88e28bfc950f3f918c6bb6ce98b319f6b3627",
+          "bytes": 2014215
+        },
+        {
+          "path": "piper_l_description/meshes/dae/link2.dae",
+          "blob_sha": "4704b24abe3d21cf0cafffa6e16f1810ad13a6ca",
+          "bytes": 13947583
+        },
+        {
+          "path": "piper_l_description/meshes/dae/link3.dae",
+          "blob_sha": "4a06c11c32669dea5753fd3633700c1d8581351a",
+          "bytes": 4378668
+        },
+        {
+          "path": "piper_l_description/meshes/dae/link4.dae",
+          "blob_sha": "c8165dc5ad33bc8cbf610b2265c508f78f7fed05",
+          "bytes": 2169118
+        },
+        {
+          "path": "piper_l_description/meshes/dae/link5.dae",
+          "blob_sha": "0d5e9b03d9b95f6ac9eb1da6d957010227d022da",
+          "bytes": 2168374
+        },
+        {
+          "path": "piper_l_description/meshes/dae/link6.dae",
+          "blob_sha": "264791909f42d1cff17dd46d6df31e37d4045afd",
+          "bytes": 234305
+        },
+        {
+          "path": "piper_l_description/meshes/dae/link7.dae",
+          "blob_sha": "354a5ea6a6024640b340b07d6168875b6fe72c42",
+          "bytes": 162800
+        },
+        {
+          "path": "piper_l_description/meshes/dae/link8.dae",
+          "blob_sha": "de95a4ef73978830ca212d4a8c4d817ec4aada0a",
+          "bytes": 167576
+        },
+        {
+          "path": "piper_l_description/meshes/dae/realsense_mid_stand.dae",
+          "blob_sha": "567e99a80f656265d86adf3869c1b195a1c75e24",
+          "bytes": 713245
+        },
+        {
+          "path": "piper_l_description/meshes/dae/realsense_mid_stand_v2.dae",
+          "blob_sha": "4017329455611bb98da455db435b8e8cf548dd66",
+          "bytes": 712911
+        },
+        {
+          "path": "piper_l_description/meshes/dark_dae/base_link.dae",
+          "blob_sha": "23e88e08971c27f9468bae31f5742968a70611d4",
+          "bytes": 3028213
+        },
+        {
+          "path": "piper_l_description/meshes/dark_dae/link1.dae",
+          "blob_sha": "cb2ddeca589c647e1711f4abb8c4066e1078bbd8",
+          "bytes": 2013999
+        },
+        {
+          "path": "piper_l_description/meshes/dark_dae/link2.dae",
+          "blob_sha": "a245746a696801afc4113087e647bd125543814d",
+          "bytes": 13947525
+        },
+        {
+          "path": "piper_l_description/meshes/dark_dae/link3.dae",
+          "blob_sha": "393a040afef542138fe6d1dfc6535d208cc48776",
+          "bytes": 4378685
+        },
+        {
+          "path": "piper_l_description/meshes/dark_dae/link4.dae",
+          "blob_sha": "fd0e85ec9aa8a6560d12d66dbf81d35417fc747e",
+          "bytes": 2169118
+        },
+        {
+          "path": "piper_l_description/meshes/dark_dae/link5.dae",
+          "blob_sha": "69b6f85c52022bbed5429964ebe9ddcfc0697862",
+          "bytes": 2168374
+        },
+        {
+          "path": "piper_l_description/meshes/dark_dae/link6.dae",
+          "blob_sha": "d48a145d1e328d6aad055ab66c71a15ab09fa31a",
+          "bytes": 234333
+        },
+        {
+          "path": "piper_l_description/meshes/gripper_base_100_v2.dae",
+          "blob_sha": "9f11928531ab409e8931dc4bc54658f9ea68cfb1",
+          "bytes": 3759505
+        },
+        {
+          "path": "piper_l_description/package.xml",
+          "blob_sha": "3471a69f51e36887082a1f8ecf4c92345c3ef8a4",
+          "bytes": 903
+        },
+        {
+          "path": "piper_l_description/piper_l.zip",
+          "blob_sha": "b1d805dc4ed808d180abdcb56b1128c01d903744",
+          "bytes": 3421303
+        },
+        {
+          "path": "piper_l_description/rviz/piper_ctrl.rviz",
+          "blob_sha": "715188c26b7b887e9db1cb458b74a793805253bc",
+          "bytes": 8328
+        },
+        {
+          "path": "piper_l_description/rviz/piper_no_gripper.rviz",
+          "blob_sha": "b4d8471be48606351826dc2320e655ca01325634",
+          "bytes": 6243
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description.csv",
+          "blob_sha": "64c242d84c0f3493a158de2bd0a7be2c4f86257e",
+          "bytes": 3827
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description.urdf",
+          "blob_sha": "4157e38597aaee1a5661458f10298bce09a73d9c",
+          "bytes": 9231
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description.xacro",
+          "blob_sha": "faf850123a15ebd86e4b47c45c3dd514e3fed733",
+          "bytes": 13126
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435.urdf",
+          "blob_sha": "860104433a97b3108f18f15d67d432197e2288ef",
+          "bytes": 12174
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435/configuration/piper_l_description_d435_base.usd",
+          "blob_sha": "aaccbe570a441ae9a86d2df2080371ff8c9d9e1c",
+          "bytes": 33578552
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435/configuration/piper_l_description_d435_physics.usd",
+          "blob_sha": "a9082427e3832fe209c7ba35b16cab788aa16e59",
+          "bytes": 6060
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435/configuration/piper_l_description_d435_robot.usd",
+          "blob_sha": "4adcbbb75159a60203ffbd13c7697b28eb044000",
+          "bytes": 1769
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435/configuration/piper_l_description_d435_sensor.usd",
+          "blob_sha": "6af228a5de07b29083be8f2ea52820074a5e4b69",
+          "bytes": 654
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435/piper_l_description_d435.usd",
+          "blob_sha": "f0f91fa0f63b2af82a51bc10849f0f796b920c20",
+          "bytes": 1479
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435_dark.urdf",
+          "blob_sha": "eb035ad2ce1d93a07435c38fe700f19a283cc802",
+          "bytes": 12236
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435_dark/configuration/piper_l_description_d435_dark_base.usd",
+          "blob_sha": "aba1e816ff21e86b4af37ecf74abcac5443d0af7",
+          "bytes": 33578240
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435_dark/configuration/piper_l_description_d435_dark_physics.usd",
+          "blob_sha": "7ce869591e78cea485947ed5935f2b390de1fd5d",
+          "bytes": 6066
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435_dark/configuration/piper_l_description_d435_dark_robot.usd",
+          "blob_sha": "4adcbbb75159a60203ffbd13c7697b28eb044000",
+          "bytes": 1769
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435_dark/configuration/piper_l_description_d435_dark_sensor.usd",
+          "blob_sha": "6af228a5de07b29083be8f2ea52820074a5e4b69",
+          "bytes": 654
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_d435_dark/piper_l_description_d435_dark.usd",
+          "blob_sha": "077ee244fe5dc6735a12a22a72c82444d4326fe8",
+          "bytes": 1484
+        },
+        {
+          "path": "piper_l_description/urdf/piper_l_description_dark.urdf",
+          "blob_sha": "06e7425f34cceb5a7b4ecc393c1b895635161ccb",
+          "bytes": 9231
+        },
+        {
+          "path": "piper_x_description/CMakeLists.txt",
+          "blob_sha": "5d5e08322094aa4acf810a9ad31a85e80ff88ca1",
+          "bytes": 1146
+        },
+        {
+          "path": "piper_x_description/config/joint_names_PIPER-XURDF.yaml",
+          "blob_sha": "333c13ad91fb46c3f8106dc49a420c46740dcd8b",
+          "bytes": 92
+        },
+        {
+          "path": "piper_x_description/launch/display.launch",
+          "blob_sha": "3356ce96bd91777a5670e2d1b847c64bce003b20",
+          "bytes": 528
+        },
+        {
+          "path": "piper_x_description/launch/display_urdf.launch.py",
+          "blob_sha": "362ea18e0c6ea89704ed9ada957111b3b39f1bfa",
+          "bytes": 2492
+        },
+        {
+          "path": "piper_x_description/launch/display_xacro.launch.py",
+          "blob_sha": "aa80431e4dc457f71861b62c3a637fdef44b96af",
+          "bytes": 2488
+        },
+        {
+          "path": "piper_x_description/launch/gazebo.launch",
+          "blob_sha": "3d4ad970b4ef2c7606bd7a9fa6106ce9a094c164",
+          "bytes": 585
+        },
+        {
+          "path": "piper_x_description/meshes/Link1.STL",
+          "blob_sha": "2f437722323e846613163fbe0f8def6da5638906",
+          "bytes": 1332084
+        },
+        {
+          "path": "piper_x_description/meshes/Link2.STL",
+          "blob_sha": "e144ff231a0d2e50531380bee4ce128459fd47f1",
+          "bytes": 2951684
+        },
+        {
+          "path": "piper_x_description/meshes/Link3.STL",
+          "blob_sha": "9adfc0d014615375a3385ba4f9d5a788394f8581",
+          "bytes": 2362084
+        },
+        {
+          "path": "piper_x_description/meshes/Link4.STL",
+          "blob_sha": "45dd2ca0b0540309c4aba9e719e78b62630e4944",
+          "bytes": 1163284
+        },
+        {
+          "path": "piper_x_description/meshes/Link5.STL",
+          "blob_sha": "0f5a3bc567b193387d2965d7ffa5082462f57e89",
+          "bytes": 1139184
+        },
+        {
+          "path": "piper_x_description/meshes/Link6.STL",
+          "blob_sha": "acec9eaccb467b3b75a0281bbacec069726ad418",
+          "bytes": 162084
+        },
+        {
+          "path": "piper_x_description/meshes/base_link.STL",
+          "blob_sha": "109d81217ef7d7c4ba93cd0c95276741b2833e4d",
+          "bytes": 605984
+        },
+        {
+          "path": "piper_x_description/meshes/dae/J1.dae",
+          "blob_sha": "f30bb668a47837892b63663cb731d171362ecd5f",
+          "bytes": 2323489
+        },
+        {
+          "path": "piper_x_description/meshes/dae/J2.dae",
+          "blob_sha": "cc543854268701f10a0a4d052bca73148b9c0545",
+          "bytes": 14480060
+        },
+        {
+          "path": "piper_x_description/meshes/dae/J3.dae",
+          "blob_sha": "ab3dddd8ac255b527b5f43af56208b8d9c44c07b",
+          "bytes": 5098355
+        },
+        {
+          "path": "piper_x_description/meshes/dae/J4.dae",
+          "blob_sha": "98b5f4f8aa19a3227755b198b7e4898cba9662bf",
+          "bytes": 2037373
+        },
+        {
+          "path": "piper_x_description/meshes/dae/J5.dae",
+          "blob_sha": "e851de38c707afd75f8d9c0d5d291dc467f34d48",
+          "bytes": 2155609
+        },
+        {
+          "path": "piper_x_description/meshes/dae/J6.dae",
+          "blob_sha": "4a33c16843392df84f73787bb917f3f653e07181",
+          "bytes": 324529
+        },
+        {
+          "path": "piper_x_description/meshes/dae/J7.dae",
+          "blob_sha": "354a5ea6a6024640b340b07d6168875b6fe72c42",
+          "bytes": 162800
+        },
+        {
+          "path": "piper_x_description/meshes/dae/J8.dae",
+          "blob_sha": "de95a4ef73978830ca212d4a8c4d817ec4aada0a",
+          "bytes": 167576
+        },
+        {
+          "path": "piper_x_description/meshes/dae/Link1.dae",
+          "blob_sha": "ed2f725f9a1fadccaa3f7469dc57dba3d70f5b2e",
+          "bytes": 3114893
+        },
+        {
+          "path": "piper_x_description/meshes/dae/Link2.dae",
+          "blob_sha": "8f5ecaa90a0280107d10b6abbbe17c89cd2e5fad",
+          "bytes": 21624276
+        },
+        {
+          "path": "piper_x_description/meshes/dae/Link3.dae",
+          "blob_sha": "a39d9ed33f2211ea5632a6c2e54572c5ba1d2889",
+          "bytes": 6664512
+        },
+        {
+          "path": "piper_x_description/meshes/dae/Link4.dae",
+          "blob_sha": "137302487f2a57716fb7dd11e89e42047fcaec0e",
+          "bytes": 2574764
+        },
+        {
+          "path": "piper_x_description/meshes/dae/Link5.dae",
+          "blob_sha": "7a293cc56b92a2ac9146d050d8cf413dbd63b1f8",
+          "bytes": 2737211
+        },
+        {
+          "path": "piper_x_description/meshes/dae/Link6.dae",
+          "blob_sha": "8ef65228f6fdad1fa0ead6b2f9a9e5a94d5f04aa",
+          "bytes": 409514
+        },
+        {
+          "path": "piper_x_description/meshes/dae/base_Link.dae",
+          "blob_sha": "f12fea07fe729d60d87dcbe58ddb62f2edd7b4d2",
+          "bytes": 1001936
+        },
+        {
+          "path": "piper_x_description/meshes/dae/base_link.dae",
+          "blob_sha": "2309c72e62272fc54404a862f00fb6768f2bbab3",
+          "bytes": 1492416
+        },
+        {
+          "path": "piper_x_description/meshes/dae/gripper_base_100_v2.dae",
+          "blob_sha": "9f11928531ab409e8931dc4bc54658f9ea68cfb1",
+          "bytes": 3759505
+        },
+        {
+          "path": "piper_x_description/package.xml",
+          "blob_sha": "3b1105f310f9bc7209ca8641ef73f28c7f8acc9f",
+          "bytes": 903
+        },
+        {
+          "path": "piper_x_description/rviz/piper_ctrl.rviz",
+          "blob_sha": "2042a333de4a2ecbe608b1375af169ba3d63f15e",
+          "bytes": 6465
+        },
+        {
+          "path": "piper_x_description/urdf/PIPER-XURDF.csv",
+          "blob_sha": "3f76464476ffbc414a38f17426b107aba4e9d564",
+          "bytes": 5061
+        },
+        {
+          "path": "piper_x_description/urdf/piper_x_description.urdf",
+          "blob_sha": "167f5ce6e56f0fc2f20a5caa14049d16a2a82cc1",
+          "bytes": 11021
+        },
+        {
+          "path": "piper_x_description/urdf/piper_x_description.xacro",
+          "blob_sha": "9185e5ee3ab0e234744d26297b7fbe23d33ec4b9",
+          "bytes": 12553
+        },
+        {
+          "path": "piper_x_description/urdf/piper_x_description_d435.urdf",
+          "blob_sha": "ea67efb152c33bef9cacbf89fb10252cc2c9d4d7",
+          "bytes": 12355
+        },
+        {
+          "path": "piper_x_description/urdf/piper_x_description_d435/configuration/piper_x_description_d435_base.usd",
+          "blob_sha": "59ec81914cd8f2834a888d2cc8265eb7de7513bc",
+          "bytes": 33504789
+        },
+        {
+          "path": "piper_x_description/urdf/piper_x_description_d435/configuration/piper_x_description_d435_physics.usd",
+          "blob_sha": "53c4280f28b63065fa794413b3df7c323d259331",
+          "bytes": 6082
+        },
+        {
+          "path": "piper_x_description/urdf/piper_x_description_d435/configuration/piper_x_description_d435_robot.usd",
+          "blob_sha": "e02648a898913875cb37d85e42417998b02d3710",
+          "bytes": 1769
+        },
+        {
+          "path": "piper_x_description/urdf/piper_x_description_d435/configuration/piper_x_description_d435_sensor.usd",
+          "blob_sha": "3d0ea922506e6354fb34523fc8272899083398c8",
+          "bytes": 654
+        },
+        {
+          "path": "piper_x_description/urdf/piper_x_description_d435/piper_x_description_d435.usd",
+          "blob_sha": "594d0b7dce91766b981c1058c15d3693ef270732",
+          "bytes": 1479
+        },
+        {
+          "path": "realsense2_description/CHANGELOG.rst",
+          "blob_sha": "b911e1448fce782446445869c5b44f7bedc5f819",
+          "bytes": 2491
+        },
+        {
+          "path": "realsense2_description/CMakeLists.txt",
+          "blob_sha": "30c04d9fa8b27f703e2dc2b06e3595d3cabba4a5",
+          "bytes": 863
+        },
+        {
+          "path": "realsense2_description/launch/__pycache__/launch_utils.cpython-310.pyc",
+          "blob_sha": "1521ae1dad105902c32ec0615c043084f6404927",
+          "bytes": 841
+        },
+        {
+          "path": "realsense2_description/launch/launch_utils.py",
+          "blob_sha": "10e43fb0644a1fa4951ac19164326be54c9d0c71",
+          "bytes": 1234
+        },
+        {
+          "path": "realsense2_description/launch/view_model.launch.py",
+          "blob_sha": "43caafc2b01a471f1da3a2d84e2adab4d4e8528b",
+          "bytes": 2318
+        },
+        {
+          "path": "realsense2_description/meshes/d405.stl",
+          "blob_sha": "413d260f6d2294e19401298bf698be7e4cfa502f",
+          "bytes": 194684
+        },
+        {
+          "path": "realsense2_description/meshes/d415.stl",
+          "blob_sha": "6c6c82b0585c375526839fb94d52f173291457ed",
+          "bytes": 21258084
+        },
+        {
+          "path": "realsense2_description/meshes/d435.dae",
+          "blob_sha": "0ed32368fc5ba6912be530395a72553de9f21d9e",
+          "bytes": 15782439
+        },
+        {
+          "path": "realsense2_description/meshes/d455.stl",
+          "blob_sha": "9b30406e532f7c3939e6f52440c8f85bc7e2b934",
+          "bytes": 2558184
+        },
+        {
+          "path": "realsense2_description/meshes/l515.dae",
+          "blob_sha": "93607bd1b1bcc7fe979ab0960f988288210db991",
+          "bytes": 33208371
+        },
+        {
+          "path": "realsense2_description/meshes/plug.stl",
+          "blob_sha": "682bce043b3616214e669f80f385b0d610c2f11b",
+          "bytes": 292334
+        },
+        {
+          "path": "realsense2_description/meshes/plug_collision.stl",
+          "blob_sha": "2e493bdfa7d227801841f88479afb7ec3959b0a2",
+          "bytes": 11284
+        },
+        {
+          "path": "realsense2_description/package.xml",
+          "blob_sha": "86716524877bc5be7f60c0bf4d5ed05c5d759461",
+          "bytes": 1048
+        },
+        {
+          "path": "realsense2_description/rviz/urdf.rviz",
+          "blob_sha": "53dc141e4f56815e162d18a42630d02b3038f26d",
+          "bytes": 5318
+        },
+        {
+          "path": "realsense2_description/urdf/_d405.urdf.xacro",
+          "blob_sha": "5ca17f2116a38cc60928e6ac69e52c00825e528e",
+          "bytes": 7296
+        },
+        {
+          "path": "realsense2_description/urdf/_d415.urdf.xacro",
+          "blob_sha": "65266c31609635862ce6c0e79982a8e6ae501776",
+          "bytes": 6960
+        },
+        {
+          "path": "realsense2_description/urdf/_d435.urdf.xacro",
+          "blob_sha": "9c289477654b7233a4958683fbf0071c6357dd03",
+          "bytes": 7550
+        },
+        {
+          "path": "realsense2_description/urdf/_d435i.urdf.xacro",
+          "blob_sha": "9acd8d871ca04c19d82add3ea02d0a1434483c27",
+          "bytes": 1404
+        },
+        {
+          "path": "realsense2_description/urdf/_d435i_imu_modules.urdf.xacro",
+          "blob_sha": "cac7f4b367ecf85a2e03d9948ea89491544c130e",
+          "bytes": 2127
+        },
+        {
+          "path": "realsense2_description/urdf/_d455.urdf.xacro",
+          "blob_sha": "8804ab880b6f6012020986e56ea8224a6cfd7f16",
+          "bytes": 9187
+        },
+        {
+          "path": "realsense2_description/urdf/_materials.urdf.xacro",
+          "blob_sha": "3f6d3eaeff99bce76053ac3e1afef16235b52382",
+          "bytes": 1216
+        },
+        {
+          "path": "realsense2_description/urdf/_r410.urdf.xacro",
+          "blob_sha": "b0121d2b0c38a13b897ed54a0e9ffd72a3c9f02d",
+          "bytes": 5421
+        },
+        {
+          "path": "realsense2_description/urdf/_r430.urdf.xacro",
+          "blob_sha": "883523359d1150dfee36ec987c866634f7c1bd31",
+          "bytes": 5377
+        },
+        {
+          "path": "realsense2_description/urdf/_usb_plug.urdf.xacro",
+          "blob_sha": "7381756e17d17f7cc77b54ab71cef08e7950ce6d",
+          "bytes": 1817
+        },
+        {
+          "path": "realsense2_description/urdf/test_d405_camera.urdf.xacro",
+          "blob_sha": "5a2b313f5d3a54ee64e2185b060440eb2dd67b6b",
+          "bytes": 437
+        },
+        {
+          "path": "realsense2_description/urdf/test_d415_camera.urdf.xacro",
+          "blob_sha": "aaecade306ac23931d727729f0a043cefe7e402b",
+          "bytes": 585
+        },
+        {
+          "path": "realsense2_description/urdf/test_d435_camera.urdf.xacro",
+          "blob_sha": "191d8043564894abd85903acdf0b608d77b75a7c",
+          "bytes": 600
+        },
+        {
+          "path": "realsense2_description/urdf/test_d435_multiple_cameras.urdf.xacro",
+          "blob_sha": "5ee8586dfdc9b8a16898ef5bce9d342eb4f84e16",
+          "bytes": 633
+        },
+        {
+          "path": "realsense2_description/urdf/test_d435i_camera.urdf.xacro",
+          "blob_sha": "326ba1520d514149a58638a11323c18f25102d84",
+          "bytes": 444
+        },
+        {
+          "path": "realsense2_description/urdf/test_d455_camera.urdf.xacro",
+          "blob_sha": "c581f756ffd53036335bac419a4c653ecf8f02ce",
+          "bytes": 437
+        },
+        {
+          "path": "realsense2_description/urdf/test_r410_camera.urdf.xacro",
+          "blob_sha": "aaf4ac7c2f5a7b9710ef4d3db43bc712e94a2b5f",
+          "bytes": 437
+        },
+        {
+          "path": "realsense2_description/urdf/test_r430_camera.urdf.xacro",
+          "blob_sha": "9064208e0910a7d70bdf0f7d3dcb0c1f668d8d3c",
+          "bytes": 437
+        }
+      ]
+    }
+  ],
+  "raw_evidence": {
+    "install_report_sha256": "63d1ddaaf8c0d94b945a9d70698956e3fd9312fc80f2a2bca7365d9f5f3a34b3",
+    "junit_sha256": "7ac5eea4c7d648a94ac057faaf9c48d8ee1f97711be471cc79b77876f1c23208",
+    "vggt_archive_report_sha256": "58825d3908c42d63deded64fa36a40e7452c628ebc3d2c91e4c5eb54ad3311ef",
+    "piper_archive_report_sha256": "d673cd59a6798535899c209e343fac2d48be4ca47b9d5d75e004e99deb256d25"
+  }
+}

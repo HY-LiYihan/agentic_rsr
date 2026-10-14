@@ -1,0 +1,52 @@
+<mujoco model="piper_tabletop">
+  <visual>
+    <headlight diffuse="0.8 0.8 0.8" ambient="0.3 0.3 0.3"/>
+  </visual>
+  <asset>
+    <texture name="sky" type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+  </asset>
+  <worldbody>
+    <light pos="0 0 2" dir="0 0 -1" directional="true"/>
+    <geom name="floor" type="plane" size="0 0 0.05" rgba="0.2 0.3 0.4 1"/>
+    <geom name="table" type="box" pos="0 0 0.375" size="0.6 0.4 0.375" rgba="0.5 0.4 0.3 1"/>
+    <body name="piper_mount" pos="-0.3 0 0.75" quat="1 0 0 0"/>
+    <body name="blue_block" pos="-0.05 -0.12 0.773">
+      <freejoint/>
+      <geom type="box" size="0.022 0.022 0.022" mass="0.04" rgba="0.1 0.25 0.9 1"/>
+    </body>
+    <body name="green_block" pos="-0.13 0.04 0.773">
+      <freejoint/>
+      <geom type="box" size="0.022 0.022 0.022" mass="0.04" rgba="0.2 0.7 0.25 1"/>
+    </body>
+    <body name="red_block" pos="-0.05 0.16 0.773">
+      <freejoint/>
+      <geom type="box" size="0.022 0.022 0.022" mass="0.04" rgba="0.9 0.15 0.15 1"/>
+    </body>
+    <body name="yellow_bowl" pos="0.05 0.08 0.75">
+      <geom name="yellow_bowl_base" type="box" pos="0 0 0.005" size="0.055 0.055 0.005" rgba="0.95 0.8 0.1 1"/>
+      <geom name="yellow_bowl_front" type="box" pos="0 -0.05 0.024" size="0.055 0.005 0.014" rgba="0.95 0.8 0.1 1"/>
+      <geom name="yellow_bowl_back" type="box" pos="0 0.05 0.024" size="0.055 0.005 0.014" rgba="0.95 0.8 0.1 1"/>
+      <geom name="yellow_bowl_left" type="box" pos="-0.05 0 0.024" size="0.005 0.045 0.014" rgba="0.95 0.8 0.1 1"/>
+      <geom name="yellow_bowl_right" type="box" pos="0.05 0 0.024" size="0.005 0.045 0.014" rgba="0.95 0.8 0.1 1"/>
+    </body>
+    <body name="blue_bowl" pos="-0.22 0.19 0.75">
+      <geom type="box" pos="0 0 0.005" size="0.055 0.055 0.005" rgba="0.1 0.25 0.9 1"/>
+      <geom type="box" pos="0 -0.05 0.024" size="0.055 0.005 0.014" rgba="0.1 0.25 0.9 1"/>
+      <geom type="box" pos="0 0.05 0.024" size="0.055 0.005 0.014" rgba="0.1 0.25 0.9 1"/>
+      <geom type="box" pos="-0.05 0 0.024" size="0.005 0.045 0.014" rgba="0.1 0.25 0.9 1"/>
+      <geom type="box" pos="0.05 0 0.024" size="0.005 0.045 0.014" rgba="0.1 0.25 0.9 1"/>
+    </body>
+    <body name="green_bowl" pos="-0.16 -0.23 0.75">
+      <geom type="box" pos="0 0 0.005" size="0.055 0.055 0.005" rgba="0.2 0.7 0.25 1"/>
+      <geom type="box" pos="0 -0.05 0.024" size="0.055 0.005 0.014" rgba="0.2 0.7 0.25 1"/>
+      <geom type="box" pos="0 0.05 0.024" size="0.055 0.005 0.014" rgba="0.2 0.7 0.25 1"/>
+      <geom type="box" pos="-0.05 0 0.024" size="0.005 0.045 0.014" rgba="0.2 0.7 0.25 1"/>
+      <geom type="box" pos="0.05 0 0.024" size="0.005 0.045 0.014" rgba="0.2 0.7 0.25 1"/>
+    </body>
+  </worldbody>
+  <equality>
+    <weld name="blue_block_grasp" body1="gripper_base" body2="blue_block" active="false"/>
+    <weld name="green_block_grasp" body1="gripper_base" body2="green_block" active="false"/>
+    <weld name="red_block_grasp" body1="gripper_base" body2="red_block" active="false"/>
+  </equality>
+</mujoco>

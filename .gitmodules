@@ -1,0 +1,9 @@
+[submodule "robot_control"]
+	path = external/robot_control
+	url = https://github.com/HY-LiYihan/robot_control.git
+[submodule "external/ultralytics"]
+	path = external/ultralytics
+	url = https://github.com/ultralytics/ultralytics.git
+[submodule "external/vggt_omega"]
+	path = external/vggt_omega
+	url = https://github.com/facebookresearch/vggt-omega.git

@@ -1,0 +1,727 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-13T19:45:14.698931+00:00",
+  "scope": "Existing local VGGT Git-object hydration and full checkout; no fresh clone, installation or inference",
+  "source": "https://codeload.github.com/facebookresearch/vggt-omega/tar.gz/48b23c8ce72c9a8fcf987f0d7f43d8e4870759f6",
+  "remote_url": "https://github.com/facebookresearch/vggt-omega.git",
+  "commit": "48b23c8ce72c9a8fcf987f0d7f43d8e4870759f6",
+  "tree_sha": "d3a0000eb234137ab80217c7686f3ce91fe5b035",
+  "archive_sha256": "7ee9d87cb0ab0efc42d9092332d3e0809ef379bafe2c7c293354378a5657793c",
+  "archive_bytes": 44143006,
+  "files_verified": 113,
+  "bytes_verified": 47401823,
+  "files_present_before": 33,
+  "files_materialized": 80,
+  "missing_unique_blobs_populated": 76,
+  "all_archive_blobs_match_authoritative_local_tree": true,
+  "existing_tracked_files_verified_before_mutation": true,
+  "all_checkout_blobs_and_modes_verified": true,
+  "sparse_checkout_after": false,
+  "skip_worktree_entries_after": 0,
+  "submodule_status_after": "clean",
+  "head_and_remote_unchanged": true,
+  "network_fetch_performed": false,
+  "git_no_lazy_fetch": true,
+  "model_constructed": false,
+  "model_inference_performed": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 310,
+      "mode": "100644",
+      "blob_sha": "7527761962d0c72c7290fd4888360093dbda3f43"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11720,
+      "mode": "100644",
+      "blob_sha": "01465aec627c2698f972ca68abcabf54a497db14"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7666,
+      "mode": "100644",
+      "blob_sha": "e7cbef02dc3a2cbf89d4478639cd18bb05a1f9e4"
+    },
+    {
+      "path": "demo_gradio.py",
+      "bytes": 19320,
+      "mode": "100644",
+      "blob_sha": "d322c31bf426b482ca8c4773324a7b7e0ff6a8e9"
+    },
+    {
+      "path": "eval/README.md",
+      "bytes": 1601,
+      "mode": "100644",
+      "blob_sha": "2e01d7318a033a528170a9359aa8350efe9f1b59"
+    },
+    {
+      "path": "eval/datasets.py",
+      "bytes": 2081,
+      "mode": "100644",
+      "blob_sha": "6be456f82c2e52da0e76ecdcdbd40db567b669d7"
+    },
+    {
+      "path": "eval/evaluate.py",
+      "bytes": 4085,
+      "mode": "100644",
+      "blob_sha": "cd01f7a2422a9d87e5eba8880b0a39800a9496aa"
+    },
+    {
+      "path": "eval/frames/eth3d.json",
+      "bytes": 1248,
+      "mode": "100644",
+      "blob_sha": "90d760940fecd4b1ffdd4e2a8740d9e59067d7ec"
+    },
+    {
+      "path": "eval/frames/sintel.json",
+      "bytes": 1571,
+      "mode": "100644",
+      "blob_sha": "7396a610d0edf793fcf0bee8812e65eb0751fa04"
+    },
+    {
+      "path": "eval/metrics.py",
+      "bytes": 7494,
+      "mode": "100644",
+      "blob_sha": "552f02f7acef9952a26f562c9d6ec5c017b46e72"
+    },
+    {
+      "path": "eval/model.py",
+      "bytes": 3002,
+      "mode": "100644",
+      "blob_sha": "01bb191adbb3ba3c313692ed8c9b9a2f8f9a1863"
+    },
+    {
+      "path": "eval/prepare.py",
+      "bytes": 22142,
+      "mode": "100644",
+      "blob_sha": "990a883cab7a9564187110d1de8c042959200d72"
+    },
+    {
+      "path": "eval/requirements.txt",
+      "bytes": 22,
+      "mode": "100644",
+      "blob_sha": "67287f5a1b13b345514762bc353c8e667d4df3e4"
+    },
+    {
+      "path": "examples/desert_road.mp4",
+      "bytes": 6539814,
+      "mode": "100644",
+      "blob_sha": "67120eb9561db985f4b0982e3b60e7bf8414a5f8"
+    },
+    {
+      "path": "examples/forest_road.mp4",
+      "bytes": 10681415,
+      "mode": "100644",
+      "blob_sha": "06adcb0095f6d384d615467d9fddd04c0b33ca18"
+    },
+    {
+      "path": "examples/lake_speedboat.mp4",
+      "bytes": 4790715,
+      "mode": "100644",
+      "blob_sha": "177413b053c6d8862fc1c41933a63a48674de90d"
+    },
+    {
+      "path": "examples/snow_lift.mp4",
+      "bytes": 20177803,
+      "mode": "100644",
+      "blob_sha": "2472ec850443f0207e8d8dcc710c5591d98a5784"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1004,
+      "mode": "100644",
+      "blob_sha": "89402e812261822b18ddf6ad290bcdfd6dc5d967"
+    },
+    {
+      "path": "reproduction.md",
+      "bytes": 12917,
+      "mode": "100644",
+      "blob_sha": "624cfa82dea6e3c05c742e685c09d0e0a8f649a0"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 77,
+      "mode": "100644",
+      "blob_sha": "2103813bc516e1589864e219f1bb69c808b185c2"
+    },
+    {
+      "path": "requirements_demo.txt",
+      "bytes": 97,
+      "mode": "100644",
+      "blob_sha": "74e804a1f61e65b6d815491ccc3a8e376477a25c"
+    },
+    {
+      "path": "training/README.md",
+      "bytes": 6821,
+      "mode": "100644",
+      "blob_sha": "36f0b8a9517a9a68b6c6b50ec119b21153f27928"
+    },
+    {
+      "path": "training/__init__.py",
+      "bytes": 0,
+      "mode": "100644",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "training/config/default.yaml",
+      "bytes": 7419,
+      "mode": "100644",
+      "blob_sha": "b02e1b3c523e4c55b91d705e5ced96b0854d9dc9"
+    },
+    {
+      "path": "training/config/default_dataset.yaml",
+      "bytes": 2264,
+      "mode": "100644",
+      "blob_sha": "6476ce3188159bf4244c9ccc968f1c7db83a81c6"
+    },
+    {
+      "path": "training/consolidate_checkpoint.py",
+      "bytes": 2507,
+      "mode": "100644",
+      "blob_sha": "10cdb932983b8344b3d3fda25b619282dfb7bea1"
+    },
+    {
+      "path": "training/curation/README.md",
+      "bytes": 3446,
+      "mode": "100644",
+      "blob_sha": "747e4525ca94b61ed4a6107e03328a8d576a1283"
+    },
+    {
+      "path": "training/curation/__init__.py",
+      "bytes": 1830,
+      "mode": "100644",
+      "blob_sha": "f31a7d853cf195a3a6edecaa9ec5a424a567a907"
+    },
+    {
+      "path": "training/curation/compute_metrics.py",
+      "bytes": 30132,
+      "mode": "100644",
+      "blob_sha": "18524990bacea1bc8e917d21858e70f8b9970fb0"
+    },
+    {
+      "path": "training/curation/curate.py",
+      "bytes": 4980,
+      "mode": "100644",
+      "blob_sha": "4689540083796fd056c030870539d9977693ba32"
+    },
+    {
+      "path": "training/curation/ensemble.py",
+      "bytes": 13493,
+      "mode": "100644",
+      "blob_sha": "a8d9bed1834c5c8b3f2d6317c979019185ae60f1"
+    },
+    {
+      "path": "training/curation/ensemble_config.json",
+      "bytes": 933,
+      "mode": "100644",
+      "blob_sha": "036bb07f12276ce94c03d04ebcd65abf50b512da"
+    },
+    {
+      "path": "training/curation/train.py",
+      "bytes": 4926,
+      "mode": "100644",
+      "blob_sha": "369bc4e77f3a1fbd13f569f1e930c50d135baebe"
+    },
+    {
+      "path": "training/curation/unified_io.py",
+      "bytes": 6365,
+      "mode": "100644",
+      "blob_sha": "73464e598181dfbe490d6467064b2d078b5f251d"
+    },
+    {
+      "path": "training/data/__init__.py",
+      "bytes": 57,
+      "mode": "100644",
+      "blob_sha": "06980a0edf46aed198b05488cc43ce4f0ab8989f"
+    },
+    {
+      "path": "training/data/augmentation.py",
+      "bytes": 5527,
+      "mode": "100644",
+      "blob_sha": "b5ca073950af28c2cf6c83b5da9f5c2b282f2657"
+    },
+    {
+      "path": "training/data/base_dataset.py",
+      "bytes": 23217,
+      "mode": "100644",
+      "blob_sha": "f7e68d0aaecac6cb4ce98840f058b020922bd995"
+    },
+    {
+      "path": "training/data/composed_dataset.py",
+      "bytes": 6445,
+      "mode": "100644",
+      "blob_sha": "b00964ade9c3ed695fc3d97c56d5bbc4c9aefb82"
+    },
+    {
+      "path": "training/data/dataset_util.py",
+      "bytes": 21996,
+      "mode": "100644",
+      "blob_sha": "c35e726b01ce9cae4ce8d3d8e7bc327bbf31a579"
+    },
+    {
+      "path": "training/data/datasets/__init__.py",
+      "bytes": 0,
+      "mode": "100644",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "training/data/datasets/unified.py",
+      "bytes": 27201,
+      "mode": "100644",
+      "blob_sha": "1fc547d913a5a84a5ed4fe9ff2ba8da8ccbbc951"
+    },
+    {
+      "path": "training/data/datasets/unified_helper.py",
+      "bytes": 9533,
+      "mode": "100644",
+      "blob_sha": "1911042950ff07f3ec69737898f4b77dc58f38ed"
+    },
+    {
+      "path": "training/data/dynamic_dataloader.py",
+      "bytes": 8887,
+      "mode": "100644",
+      "blob_sha": "0825aaaf9adc93c081087f53e0ad7e65e233966b"
+    },
+    {
+      "path": "training/data/geometry.py",
+      "bytes": 2695,
+      "mode": "100644",
+      "blob_sha": "b64eb9200a5738b3422bc3bc222955fa139835ba"
+    },
+    {
+      "path": "training/data/rotation_util.py",
+      "bytes": 2409,
+      "mode": "100644",
+      "blob_sha": "8e107177856d583ea1fba5d16cb3ca1b7a435379"
+    },
+    {
+      "path": "training/data/sampler_configs.py",
+      "bytes": 668,
+      "mode": "100644",
+      "blob_sha": "c3d657c715dd0479d53854050f011c394783a7a4"
+    },
+    {
+      "path": "training/data/track_util.py",
+      "bytes": 3885,
+      "mode": "100644",
+      "blob_sha": "e51beb9f9eff30964c40ad804937eaf46ea8b50b"
+    },
+    {
+      "path": "training/data/worker_fn.py",
+      "bytes": 792,
+      "mode": "100644",
+      "blob_sha": "0307b611cd6e9d83a82bf97e4fa683336663d441"
+    },
+    {
+      "path": "training/dataset_preparation/README.md",
+      "bytes": 5121,
+      "mode": "100644",
+      "blob_sha": "f353a66451a9897dbb7e9f1434e170b31c2d310c"
+    },
+    {
+      "path": "training/dataset_preparation/clean.md",
+      "bytes": 26017,
+      "mode": "100644",
+      "blob_sha": "e3fd1926f4d256d774115bfd10e20a2689a9e8fd"
+    },
+    {
+      "path": "training/dataset_preparation/download_and_convert.md",
+      "bytes": 32027,
+      "mode": "100644",
+      "blob_sha": "d9f8c78918d81dd61d8dd99b6ccb096fc0829a47"
+    },
+    {
+      "path": "training/dataset_preparation/visualize_and_review.md",
+      "bytes": 6898,
+      "mode": "100644",
+      "blob_sha": "3ee9515897dd08197a1ae17d1b9050b811955ac8"
+    },
+    {
+      "path": "training/dataset_preparation/visualize_dataset_template.py",
+      "bytes": 32888,
+      "mode": "100644",
+      "blob_sha": "7a0fe35dcc6c970079c4b456075c482924330f62"
+    },
+    {
+      "path": "training/launch.py",
+      "bytes": 1464,
+      "mode": "100644",
+      "blob_sha": "51abcabc291c843e87e2c594a00dd5f82c70ee45"
+    },
+    {
+      "path": "training/losses/__init__.py",
+      "bytes": 0,
+      "mode": "100644",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "training/losses/base_loss/__init__.py",
+      "bytes": 0,
+      "mode": "100644",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "training/losses/base_loss/camera.py",
+      "bytes": 9127,
+      "mode": "100644",
+      "blob_sha": "39f8a1700c3521a231dca2d497083b54e458676a"
+    },
+    {
+      "path": "training/losses/base_loss/consistency.py",
+      "bytes": 3318,
+      "mode": "100644",
+      "blob_sha": "7f6d85a6c3f06027dda511f046a0e87cc921d461"
+    },
+    {
+      "path": "training/losses/base_loss/depth.py",
+      "bytes": 10952,
+      "mode": "100644",
+      "blob_sha": "b911800894f3d9f35a4371ce1721237222b153fa"
+    },
+    {
+      "path": "training/losses/base_loss/gradient.py",
+      "bytes": 11089,
+      "mode": "100644",
+      "blob_sha": "46b0d9eea1db64f3a53917ab79e22b4e610d3445"
+    },
+    {
+      "path": "training/losses/base_loss/point.py",
+      "bytes": 3829,
+      "mode": "100644",
+      "blob_sha": "ba1a1f260007d37a60c6c1dba80a81af41d5838a"
+    },
+    {
+      "path": "training/losses/gt_normalization.py",
+      "bytes": 1559,
+      "mode": "100644",
+      "blob_sha": "6bc61f7556589c919fc7d9f5e36eed3252d593ff"
+    },
+    {
+      "path": "training/losses/loss.py",
+      "bytes": 5500,
+      "mode": "100644",
+      "blob_sha": "afbbc2fdbf8d9db8ec677d80c4640a8c5b85c526"
+    },
+    {
+      "path": "training/losses/metric.py",
+      "bytes": 2715,
+      "mode": "100644",
+      "blob_sha": "8ce9cf354901ddc3e6731454760eb1f4575c2a64"
+    },
+    {
+      "path": "training/losses/normalization.py",
+      "bytes": 2356,
+      "mode": "100644",
+      "blob_sha": "a0787c9f067879bdd8df237ae4651b5655987e82"
+    },
+    {
+      "path": "training/losses/unprojection.py",
+      "bytes": 2215,
+      "mode": "100644",
+      "blob_sha": "50872448f2dc447da1bb19a7c3b7b617693fae99"
+    },
+    {
+      "path": "training/train_utils/__init__.py",
+      "bytes": 0,
+      "mode": "100644",
+      "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "training/train_utils/checkpoint.py",
+      "bytes": 6403,
+      "mode": "100644",
+      "blob_sha": "0563d265dfa67c9f2322bb1bdd2bbbe441e2c00b"
+    },
+    {
+      "path": "training/train_utils/distributed.py",
+      "bytes": 1009,
+      "mode": "100644",
+      "blob_sha": "cdd8e84ece821a1474e3a3f48b4dcc8a19b0c79d"
+    },
+    {
+      "path": "training/train_utils/freeze.py",
+      "bytes": 2270,
+      "mode": "100644",
+      "blob_sha": "99885829f5d43df14fce6a0b8a967a2ba8c91488"
+    },
+    {
+      "path": "training/train_utils/fsdp.py",
+      "bytes": 8993,
+      "mode": "100644",
+      "blob_sha": "d5e5e29601c2c45f8c27f0e795294b87a7635a05"
+    },
+    {
+      "path": "training/train_utils/general.py",
+      "bytes": 5738,
+      "mode": "100644",
+      "blob_sha": "7902d6ddd6e36e31e2c5af7f6e2dce7b659fa958"
+    },
+    {
+      "path": "training/train_utils/gradient_clip.py",
+      "bytes": 3003,
+      "mode": "100644",
+      "blob_sha": "6f8271efbd22c7c7b887e5037681b411a36544e6"
+    },
+    {
+      "path": "training/train_utils/logging.py",
+      "bytes": 1455,
+      "mode": "100644",
+      "blob_sha": "bb54d6150cc298e88c519b43cdaafd969ef9ab32"
+    },
+    {
+      "path": "training/train_utils/normalization.py",
+      "bytes": 9266,
+      "mode": "100644",
+      "blob_sha": "f43abf402ba8bf0e8d78c7858dde5c07e206ba32"
+    },
+    {
+      "path": "training/train_utils/optimizer.py",
+      "bytes": 10424,
+      "mode": "100644",
+      "blob_sha": "1af42b72204d9d928b98fa7e1cd23dbe59f084b4"
+    },
+    {
+      "path": "training/train_utils/tb_writer.py",
+      "bytes": 1565,
+      "mode": "100644",
+      "blob_sha": "66ec95ce93a61c2125f73d8620f27e18d2ed3590"
+    },
+    {
+      "path": "training/trainer.py",
+      "bytes": 33328,
+      "mode": "100644",
+      "blob_sha": "fc907f37fd50801e67454aabca2a2a216fc10cbe"
+    },
+    {
+      "path": "training/trainer_conf.py",
+      "bytes": 2185,
+      "mode": "100644",
+      "blob_sha": "feaffab7e6947de3bb368a3dbd702806b3e66c22"
+    },
+    {
+      "path": "training/trainer_utils.py",
+      "bytes": 1469,
+      "mode": "100644",
+      "blob_sha": "a9b0f51aed3f7ecc3e0c238723626576511a554d"
+    },
+    {
+      "path": "training/valid_seqs/dl3dv.txt",
+      "bytes": 540385,
+      "mode": "100644",
+      "blob_sha": "e0d649006a8d83a1d7f0e12ad757c842aa0cf897"
+    },
+    {
+      "path": "training/valid_seqs/eden.txt",
+      "bytes": 9258,
+      "mode": "100644",
+      "blob_sha": "bf2ff538b27cb0c34e0fda4d127572f7cc0066da"
+    },
+    {
+      "path": "training/valid_seqs/hypersim.txt",
+      "bytes": 4248,
+      "mode": "100644",
+      "blob_sha": "86c73d9e94eae21a820bc306daf0bcdda74f7f11"
+    },
+    {
+      "path": "training/valid_seqs/megasynth.txt",
+      "bytes": 2485475,
+      "mode": "100644",
+      "blob_sha": "7aa86a2f1352df0d0e4b7a6984f45d7b7477626b"
+    },
+    {
+      "path": "training/valid_seqs/midair.txt",
+      "bytes": 6924,
+      "mode": "100644",
+      "blob_sha": "70f125d811e939d4b7ad4c338cdd36931fa37ddd"
+    },
+    {
+      "path": "training/valid_seqs/mvssynth.txt",
+      "bytes": 600,
+      "mode": "100644",
+      "blob_sha": "63c5c63c9facf794df9a33c714ec1cb65474c285"
+    },
+    {
+      "path": "training/valid_seqs/sailvos.txt",
+      "bytes": 1813,
+      "mode": "100644",
+      "blob_sha": "1fffdceb76ce84e66d88fdd1436aa47f073675a9"
+    },
+    {
+      "path": "training/valid_seqs/uco3d.txt",
+      "bytes": 1513728,
+      "mode": "100755",
+      "blob_sha": "8b27fe8b8503d443e1a0ddd01243d264791b52ee"
+    },
+    {
+      "path": "vggt_omega/__init__.py",
+      "bytes": 329,
+      "mode": "100644",
+      "blob_sha": "d22e291ac1dd0f24161f5c865f8f21b445b2eb43"
+    },
+    {
+      "path": "vggt_omega/models/__init__.py",
+      "bytes": 258,
+      "mode": "100644",
+      "blob_sha": "1261acbf607bb88e13868428199eaaa883cacc6e"
+    },
+    {
+      "path": "vggt_omega/models/aggregator.py",
+      "bytes": 9893,
+      "mode": "100644",
+      "blob_sha": "09ea54a596b32e53c1b576a1c121fa6b95b84782"
+    },
+    {
+      "path": "vggt_omega/models/heads/__init__.py",
+      "bytes": 380,
+      "mode": "100644",
+      "blob_sha": "72644b0c06ed0b3844e475baf660ad558d446f95"
+    },
+    {
+      "path": "vggt_omega/models/heads/camera_head.py",
+      "bytes": 3045,
+      "mode": "100644",
+      "blob_sha": "31d1406c5168339d65b7e1fdbaed457373ce4a71"
+    },
+    {
+      "path": "vggt_omega/models/heads/dense_head.py",
+      "bytes": 12054,
+      "mode": "100644",
+      "blob_sha": "4713aa5b5361fd30a215169da8b4c0f1d7810a2c"
+    },
+    {
+      "path": "vggt_omega/models/heads/text_alignment_head.py",
+      "bytes": 3113,
+      "mode": "100644",
+      "blob_sha": "3182f1b46939bc076791b9dbe64954f661155155"
+    },
+    {
+      "path": "vggt_omega/models/heads/utils.py",
+      "bytes": 3919,
+      "mode": "100644",
+      "blob_sha": "2a2af55281e514d94a934e8b9213ba64f6a39686"
+    },
+    {
+      "path": "vggt_omega/models/layers/__init__.py",
+      "bytes": 793,
+      "mode": "100644",
+      "blob_sha": "8064d1d33c4783c5d3b715499bf88df817e5459a"
+    },
+    {
+      "path": "vggt_omega/models/layers/attention.py",
+      "bytes": 7087,
+      "mode": "100644",
+      "blob_sha": "e8a0d1c0a13c8aac9d3368e42452e1efc3dcfa92"
+    },
+    {
+      "path": "vggt_omega/models/layers/block.py",
+      "bytes": 10677,
+      "mode": "100644",
+      "blob_sha": "1a2b22430562b9969e3dcb1b774ac45c6c6cc4a1"
+    },
+    {
+      "path": "vggt_omega/models/layers/ffn_layers.py",
+      "bytes": 2784,
+      "mode": "100644",
+      "blob_sha": "1770fb1469813cfa75aa1f15c8bd62525ae6c863"
+    },
+    {
+      "path": "vggt_omega/models/layers/layer_scale.py",
+      "bytes": 1030,
+      "mode": "100644",
+      "blob_sha": "fa6358cc1b064cd73f44a6a12246309892830350"
+    },
+    {
+      "path": "vggt_omega/models/layers/patch_embed.py",
+      "bytes": 3074,
+      "mode": "100644",
+      "blob_sha": "195ff75fb01e5f3724bb3e4b0839aa2e3ed347d6"
+    },
+    {
+      "path": "vggt_omega/models/layers/rms_norm.py",
+      "bytes": 921,
+      "mode": "100644",
+      "blob_sha": "7c635bc7c0c9bc291a726b7fec191b3ef8afa617"
+    },
+    {
+      "path": "vggt_omega/models/layers/rope_position_encoding.py",
+      "bytes": 5504,
+      "mode": "100644",
+      "blob_sha": "9fd9091a2db82e418ae04b93825a32a1f0524120"
+    },
+    {
+      "path": "vggt_omega/models/layers/utils.py",
+      "bytes": 4098,
+      "mode": "100644",
+      "blob_sha": "1d4d07c894caddbd2dde6823307565c2583b3624"
+    },
+    {
+      "path": "vggt_omega/models/layers/vision_transformer.py",
+      "bytes": 15693,
+      "mode": "100644",
+      "blob_sha": "1d50d8adda1b70830700123ad80609cf1170be0a"
+    },
+    {
+      "path": "vggt_omega/models/vggt_omega.py",
+      "bytes": 3747,
+      "mode": "100644",
+      "blob_sha": "b3973c8ea37973c2d2dc22ab034fc12fb92eec41"
+    },
+    {
+      "path": "vggt_omega/utils/__init__.py",
+      "bytes": 251,
+      "mode": "100644",
+      "blob_sha": "b3aaf589688cf49f971b751429502ce8e4c140b6"
+    },
+    {
+      "path": "vggt_omega/utils/geometry.py",
+      "bytes": 1035,
+      "mode": "100644",
+      "blob_sha": "342a26cd959613085b6f98b59788cfc6c8840723"
+    },
+    {
+      "path": "vggt_omega/utils/load_fn.py",
+      "bytes": 4699,
+      "mode": "100644",
+      "blob_sha": "e5fdffafa6907064b920b8d0c6ae7b9847ea6401"
+    },
+    {
+      "path": "vggt_omega/utils/pose_enc.py",
+      "bytes": 1800,
+      "mode": "100644",
+      "blob_sha": "6732482a946f23d7fe9bf7f20f838d2d668e8df8"
+    },
+    {
+      "path": "vggt_omega/utils/rotation.py",
+      "bytes": 4482,
+      "mode": "100644",
+      "blob_sha": "2fb8470707f41adc236334bc5605db060807b620"
+    },
+    {
+      "path": "visual_util.py",
+      "bytes": 10011,
+      "mode": "100644",
+      "blob_sha": "9d5e8d2cefebc37f07eb46f528625ac0edb7cb36"
+    }
+  ],
+  "import_check": {
+    "status": "passed",
+    "python": "3.11.15",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "source_path": "external/vggt_omega/vggt_omega/models/vggt_omega.py",
+    "source_sha256": "190b92a37bd1ce27459a8ca92ac5fee4257f37c5b081316dbf685bee06c1f8e7",
+    "class": "vggt_omega.models.vggt_omega.VGGTOmega",
+    "versions": {
+      "torch": "2.6.0",
+      "torchvision": "0.21.0",
+      "timm": "1.0.30",
+      "vggt-omega": "0.0.1"
+    },
+    "environment": "Existing macOS all-extras archive-source environment; current-checkout VGGT selected using PYTHONPATH",
+    "offline": true,
+    "model_constructed": false,
+    "inference_performed": false
+  },
+  "verifier_sha256": "d4ead2f27ffab14d6e5be2d762d793a984fbf9e42f10ca357fa55a5427c08e41",
+  "import_probe_sha256": "928aeb7307b10ad77c5924a956081a71bac56f6d2dcba5f08677272434e8aa42"
+}

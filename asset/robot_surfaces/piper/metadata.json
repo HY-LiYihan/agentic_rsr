@@ -1,0 +1,53 @@
+{
+  "robot": "piper",
+  "urdf": "external/robot_control/vendor/agx_arm_urdf/piper/urdf/piper_with_gripper_description.xacro",
+  "urdf_sha256": "ffbf4b88a550636908fc6bbdf17f269294b6c02867733d7515129a061facc628",
+  "base_frame": "base_link",
+  "unit": "m",
+  "joint_positions": {
+    "joint1": 0.0,
+    "joint2": 0.5235987755982988,
+    "joint3": -0.7853981633974483,
+    "joint4": 0.0,
+    "joint5": 1.0471975511965976,
+    "joint6": 0.0,
+    "gripper": 0.07,
+    "world_to_base_link": 0.0,
+    "flange_joint": 0.0,
+    "gripper_base_joint": 0.0,
+    "gripper_joint1": 0.035,
+    "gripper_joint2": -0.035,
+    "camera_stand_joint": 0.0,
+    "d435i_camera_joint": 0.0
+  },
+  "requested_points": 40000,
+  "sampled_points": 40000,
+  "voxel_size_m": 0.003,
+  "random_seed": 2026,
+  "visual_mesh_count": 13,
+  "surface_area_m2": 0.7469843627234832,
+  "bounds_min_m": [
+    -0.2565130591392517,
+    -0.08201280981302261,
+    0.0
+  ],
+  "bounds_max_m": [
+    0.18775567412376404,
+    0.08206330984830856,
+    0.4324907660484314
+  ],
+  "assembly_sha256": "3ac6c7397d2120f0441ee5e4624b9806d3b3c2628fffbc769962546da5c10d41",
+  "camera_and_stand_sources": {
+    "external/robot_control/vendor/agx_arm_urdf/piper/urdf/piper_with_gripper_description.xacro": "ffbf4b88a550636908fc6bbdf17f269294b6c02867733d7515129a061facc628",
+    "external/robot_control/vendor/piper_isaac_sim/piper_description/urdf/piper_description_v100_realsense_camera_v2.urdf": "d21046ed1614b8077ce00b5309beae4fa4fbc7d3b654c3f500c815deec90d287",
+    "external/robot_control/vendor/piper_isaac_sim/realsense2_description/meshes/d435.dae": "42f3b66f47a1f8f425a2e4dc07c1d9c283183167d8441f520a15623d98f9bf78",
+    "external/robot_control/vendor/piper_isaac_sim/piper_description/meshes/dae/realsense_mid_stand.dae": "1b9253505836723353528b41c7008c4d8f539a774959da3ad9669c26ae62e45a"
+  },
+  "resolutions": [
+    40000,
+    10000,
+    5000
+  ],
+  "subsample_seed": 2027,
+  "small_clouds_are_subsets_of_large": true
+}

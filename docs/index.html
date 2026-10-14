@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Agentic RSR: task-linked scene reconstruction, execution-grounded robot policies, and real-robot transfer.">
+  <meta property="og:title" content="Agentic RSR">
+  <meta property="og:description" content="Real-to-Sim-to-Real through Scene Reconstruction and Execution-Grounded Robot Policies">
+  <meta property="og:image" content="https://hy-liyihan.github.io/agentic_rsr/assets/overview.png">
+  <meta name="theme-color" content="#126a50">
+  <title>Agentic RSR | Real-to-Sim-to-Real</title>
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+  <noscript><style>[role="tabpanel"][hidden] { display: block !important; } .tabs { display: none; }</style></noscript>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="navigation">
+    <a class="wordmark" href="#main">Agentic RSR</a>
+    <nav aria-label="Main navigation">
+      <a href="#overview">Overview</a><a href="#results">Results</a><a href="#method">Method</a><a href="#reproduce">Reproduce</a>
+      <a href="https://github.com/HY-LiYihan/agentic_rsr">GitHub ↗</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="masthead">
+      <p class="eyebrow">Research preprint · 2026</p>
+      <h1>Agentic RSR: Real-to-Sim-to-Real through Scene Reconstruction and Execution-Grounded Robot Policies</h1>
+      <p class="authors">Yihan Li<sup>1,†</sup> · Yating Feng<sup>2</sup> · Shengjiu Sun<sup>1</sup> · Jianing Chen<sup>1</sup> · Hao Ren<sup>1</sup><br>
+      Bowen Yang<sup>2</sup> · Weisheng Xu<sup>2</sup> · Qiwei Wu<sup>2</sup> · Hui Cheng<sup>1</sup> · Renjing Xu<sup>2,†</sup></p>
+      <div class="affiliations">
+        <a href="https://www.sysu.edu.cn/" aria-label="Sun Yat-sen University"><img src="assets/sysu-logo.png" width="500" height="144" alt="Sun Yat-sen University"></a>
+        <a href="https://www.hkust-gz.edu.cn/" aria-label="The Hong Kong University of Science and Technology Guangzhou"><img src="assets/hkust-gz-logo.png" width="566" height="108" alt="The Hong Kong University of Science and Technology (Guangzhou)"></a>
+      </div>
+      <p class="correspondence"><sup>1</sup> Sun Yat-sen University · <sup>2</sup> HKUST (Guangzhou) · † Corresponding authors</p>
+      <div class="resources"><a href="https://arxiv.org/abs/2610.10479">Paper (arXiv) ↗</a><a href="assets/paper.pdf">Local PDF ↗</a><a href="https://github.com/HY-LiYihan/agentic_rsr">Source code ↗</a><a href="https://github.com/HY-LiYihan/agentic_rsr/blob/master/docs/WORKFLOW.md">Workflow ↗</a><a href="https://github.com/HY-LiYihan/agentic_rsr/blob/master/CITATION.cff">Citation file ↗</a><a href="#citation">Cite</a></div>
+    </section>
+    <section id="overview" class="section overview">
+      <figure>
+        <a class="figure-link" href="assets/overview.png" data-figure><img src="assets/overview.png" width="1878" height="970" alt="Agentic RSR cycle: real observations, robot alignment, scene modeling, physics verification, simulation policies, and experience transfer."></a>
+        <figcaption>From a workspace video to a task-linked simulation, executable policy, and feedback-driven real-robot adaptation.</figcaption>
+      </figure>
+      <div class="abstract"><h2>One task, from reconstruction to execution.</h2><p>Agentic RSR connects scene reconstruction and policy development through the same manipulation task. Known robot geometry anchors metric scale; visual feedback refines the scene; MuJoCo checks task-relevant interactions. A coding agent develops policies through privileged, visual, and randomized simulation. Observations, actions, and experience then carry to the real robot through a shared task-level interface.</p></div>
+    </section>
+    <section id="results" class="section">
+      <div class="section-heading"><p class="eyebrow">Visualizations</p><h2>Real scenes, reconstructed simulations, and robot execution.</h2></div>
+      <div class="tabs" role="tablist" aria-label="Result visualizations">
+        <button id="scene-tab" role="tab" aria-selected="true" aria-controls="scene-panel" data-panel="scene-panel">Real / Sim scenes</button>
+        <button id="execution-tab" role="tab" aria-selected="false" aria-controls="execution-panel" tabindex="-1" data-panel="execution-panel">Real-robot execution</button>
+      </div>
+      <div id="scene-panel" role="tabpanel" aria-labelledby="scene-tab">
+        <figure><a class="figure-link" href="assets/real-sim.png" data-figure><img src="assets/real-sim.png" width="1377" height="478" loading="lazy" alt="Matching real and simulated workspace views for Franka FR3 and AgileX Piper manipulation scenes."></a><figcaption>Representative real and simulated views from the paper.</figcaption></figure>
+      </div>
+      <div id="execution-panel" role="tabpanel" aria-labelledby="execution-tab" hidden>
+        <figure><a class="figure-link" href="assets/robot-execution.png" data-figure><img src="assets/robot-execution.png" width="1495" height="347" loading="lazy" alt="Five real Franka robot frames: initial bowl scene followed by failed and successful placements marked in the paper."></a><figcaption>Bowl stacking on the real robot: initial state (a), failed attempts (b, d), and successful placements (c, e).</figcaption></figure>
+      </div>
+    </section>
+    <section id="method" class="section">
+      <div class="section-heading"><p class="eyebrow">Method</p><h2>Recover scale. Refine scenes. Learn from execution.</h2></div>
+      <div class="steps"><div><span>01</span><h3>Robot alignment</h3><p>VGGT-Ω depth and cameras, SAM3 masks, and URDF surface alignment establish robot-base coordinates and metric scale.</p></div><div><span>02</span><h3>Scene modeling</h3><p>A coding agent builds objects, materials, and lighting in Blender while robot geometry and reference cameras stay fixed.</p></div><div><span>03</span><h3>Physics &amp; policy</h3><p>MuJoCo probes interactions. A policy progresses from privileged states to visual observations and randomized simulation.</p></div></div>
+      <figure><a class="figure-link" href="assets/metric-alignment.png" data-figure><img src="assets/metric-alignment.png" width="1817" height="590" loading="lazy" alt="Metric scale recovery from 32 video frames, VGGT-Omega reconstruction, SAM3 masks, known URDF, and ICP registration."></a><figcaption>Known robot geometry anchors the video-estimated scene scale.</figcaption></figure>
+      <figure class="policy-figure"><a class="figure-link" href="assets/policy-loop.png" data-figure><img src="assets/policy-loop.png" width="1944" height="343" loading="lazy" alt="The paper's execution-grounded policy iteration loop."></a><figcaption>Execution feedback supports continuation, retry, revision, and experience transfer.</figcaption></figure>
+    </section>
+    <section id="reproduce" class="section reproduce">
+      <div class="section-heading"><p class="eyebrow">Repository</p><h2>Start from a source checkout.</h2></div>
+      <p>The initial full-inference target is Linux, NVIDIA CUDA, and Python 3.11. Model source revisions and dependencies are pinned; gated checkpoints and task videos are supplied separately.</p>
+      <pre><code>git clone --recurse-submodules https://github.com/HY-LiYihan/agentic_rsr.git
+cd agentic_rsr
+uv sync --locked --python 3.11 --extra local --extra sim --extra agent --extra dev
+uv run --no-sync real2sim-models check</code></pre>
+      <div class="readiness"><h3>Current reproduction status</h3><p>Offline tests and CPU registration / Blender delivery are verified. Fresh local CUDA checkpoint inference remains unverified. The public agent implementation is Codex-based; the latest DSH reconstruction batch in the paper is not reproduced by this checkout. Project code uses Apache-2.0. Historical experiment artifacts are archived in a <a href="https://huggingface.co/datasets/HY-LiYihan/Agentic-RSR-experiment-results-20261007">private Hugging Face dataset</a> requiring authorized access; asset migration and some permissions remain pending. Hardware execution requires independent safety review.</p></div>
+      <div class="text-links"><a href="https://github.com/HY-LiYihan/agentic_rsr/blob/master/docs/LOCAL_INFERENCE.md">Installation &amp; weights ↗</a><a href="https://github.com/HY-LiYihan/agentic_rsr/blob/master/docs/WORKFLOW.md">Stage-by-stage workflow ↗</a><a href="https://github.com/HY-LiYihan/agentic_rsr/blob/master/docs/ASSET_DISTRIBUTION.md">Asset distribution ↗</a><a href="https://github.com/HY-LiYihan/agentic_rsr/blob/master/docs/THIRD_PARTY.md">Third-party terms ↗</a><a href="https://github.com/HY-LiYihan/agentic_rsr/blob/master/docs/OPEN_SOURCE_PREPARATION.md">Release preparation ↗</a></div>
+    </section>
+    <section id="citation" class="section citation">
+      <div class="citation-heading"><h2>Citation</h2><button type="button" id="copy-citation">Copy BibTeX</button></div>
+      <pre><code id="bibtex">@misc{li2026agenticrsr,
+  title={Agentic RSR: Real-to-Sim-to-Real through Scene Reconstruction and Execution-Grounded Robot Policies},
+  author={Li, Yihan and Feng, Yating and Sun, Shengjiu and Chen, Jianing and Ren, Hao and Yang, Bowen and Xu, Weisheng and Wu, Qiwei and Cheng, Hui and Xu, Renjing},
+  year={2026},
+  eprint={2610.10479},
+  archivePrefix={arXiv},
+  primaryClass={cs.RO},
+  url={https://arxiv.org/abs/2610.10479}
+}</code></pre><p id="copy-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer><span>Agentic RSR · Sun Yat-sen University &amp; HKUST (Guangzhou)</span><a href="ASSET_SOURCES.md">Media sources &amp; attribution</a></footer>
+  <dialog id="figure-dialog" aria-label="Full-size paper figure"><button type="button" id="close-figure" aria-label="Close figure" title="Close figure">×</button><img id="expanded-figure" alt=""></dialog>
+</body>
+</html>

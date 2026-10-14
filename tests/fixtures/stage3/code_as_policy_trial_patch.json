@@ -1,0 +1,9 @@
+{
+  "blue_block": {
+    "mass_kg": 0.05,
+    "friction": [0.45, 0.005, 0.0001]
+  },
+  "yellow_bowl": {
+    "friction": 0.8
+  }
+}

@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-rsr"
+version = "0.1.0"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.10,<3.13"
+dependencies = ["numpy>=1.24", "opencv-python>=4.8", "trimesh>=4", "pycollada>=0.8", "python-dotenv>=1"]
+
+[project.optional-dependencies]
+local = ["numpy>=1.26,<2", "opencv-python<4.12", "torch==2.6.0", "torchvision==0.21.0", "vggt-omega==0.0.1", "ultralytics==8.4.160", "clip", "timm>=1", "huggingface-hub>=0.27"]
+sim = ["mujoco>=3.2.7", "Pillow>=10", "robot-control", "pin==2.7.0", "cmeel-urdfdom>=3.1.1.1,<4", "cmeel-tinyxml2>=10,<11"]
+agent = ["openai-codex>=0.154.0"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+real2sim-models = "perception.cli:main"
+real2sim-local-example = "perception.example:main"
+real2sim-stage1 = "real2sim.stage1.cli:main"
+real2sim-stage1-infer-batch = "real2sim.stage1.inference_batch:main"
+real2sim-robot-surfaces = "real2sim.stage1.robot_surface:main"
+real2sim-stage1-register = "real2sim.stage1.sim3_registration:main"
+real2sim-stage1-init-batch = "real2sim.stage1.initial_pose_batch:main"
+real2sim-stage1-topk = "real2sim.stage1.topk_refinement:main"
+real2sim-stage1-franka-final = "real2sim.stage1.franka_final:main"
+real2sim-stage1-franka-deliver = "real2sim.stage1.franka_delivery:main"
+real2sim-stage1-piper-final = "real2sim.stage1.piper_final:main"
+real2sim-stage1-piper-top3 = "real2sim.stage1.piper_top3:main"
+real2sim-stage1-promote-sam3 = "real2sim.stage1.promote_sam3_masks:main"
+real2sim-stage1-piper-deliver = "real2sim.stage1.piper_delivery:main"
+real2sim-stage1-sam3-review = "real2sim.stage1.sam3_review:main"
+real2sim-stage1-sam3-prompt-trial = "real2sim.stage1.sam3_prompt_trial:main"
+real2sim-stage1-franka-rotation = "real2sim.stage1.franka_rotation_refine:main"
+real2sim-stage1-object-metrics = "real2sim.stage1.object_metrics:main"
+real2sim-stage3-export = "real2sim.stage3.mujoco_export:main"
+real2sim-stage3-batch = "real2sim.stage3.batch:main"
+real2sim-stage3-physics = "real2sim.stage3.physics_probe:main"
+real2sim-stage3-agent = "real2sim.stage3.agent_runner:main"
+real2sim-stage2 = "real2sim.stage2.agent_runner:main"
+real2sim-stage2-agent = "real2sim.stage2.agent_runner:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = true
+
+[tool.setuptools.package-data]
+"real2sim.stage1" = ["thresholds.json"]
+"real2sim.stage3" = ["agent_prompt.md", "force_prior_prompt.md", "semantics_prompt.md"]
+"real2sim.stage2" = ["agent_prompt.md", "plan_prompt.md", "geometry_prompt.md", "refinement_prompt.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+markers = ["models: real checkpoint inference requiring local weights and a CUDA GPU"]
+
+[tool.uv.sources]
+vggt-omega = { path = "external/vggt_omega", editable = true }
+ultralytics = { path = "external/ultralytics", editable = true }
+robot-control = { path = "external/robot_control", editable = true }
+clip = { git = "https://github.com/ultralytics/CLIP.git", rev = "7ffa84b3bfa40c42ecc1c77147a855e69cb2dd40" }
+torch = [{ index = "pytorch-cu124", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" }]
+torchvision = [{ index = "pytorch-cu124", marker = "sys_platform == 'linux' and platform_machine == 'x86_64'" }]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
