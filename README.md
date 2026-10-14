@@ -6,15 +6,13 @@
 
 **English** · [简体中文](README.zh-CN.md)
 
-Yihan Li¹† · Yating Feng² · Shengjiu Sun¹ · Jianing Chen¹ · Hao Ren¹<br>
-Bowen Yang² · Weisheng Xu² · Qiwei Wu² · Hui Cheng¹ · Renjing Xu²†
+Yihan Li<sup>1,2,*,†</sup> · Yating Feng<sup>1,*</sup> · Shengjiu Sun² · Jianing Chen² · Hao Ren²<br>
+Bowen Yang¹ · Weisheng Xu¹ · Qiwei Wu¹ · Hui Cheng² · Renjing Xu¹†
 
-<a href="https://www.sysu.edu.cn/"><img src="docs/assets/sysu-logo.png" width="230" alt="Sun Yat-sen University"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.hkust-gz.edu.cn/"><img src="docs/assets/hkust-gz-logo.png" width="290" alt="The Hong Kong University of Science and Technology (Guangzhou)"></a>
+¹ HKUST (Guangzhou) · ² Sun Yat-sen University<br>
+\* Equal contribution (co-first authors) · † Corresponding authors
 
-¹ Sun Yat-sen University · ² HKUST (Guangzhou) · † Corresponding authors
-
-[![Project Page](https://img.shields.io/badge/Project-Page-126A50?style=for-the-badge&logo=github&logoColor=white)](https://hy-liyihan.github.io/agentic_rsr/)
+[![Project Page](https://img.shields.io/badge/Project-Page-126A50?style=for-the-badge&logo=github&logoColor=white)](https://agentic-rsr.github.io/)
 [![Paper (arXiv)](https://img.shields.io/badge/arXiv-2610.10479-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2610.10479)
 [![Hugging Face Dataset](https://img.shields.io/badge/Hugging_Face-Dataset-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/datasets/HY-LiYihan/Agentic-RSR-experiment-results-20261007)
 [![Workflow](https://img.shields.io/badge/Docs-Workflow-2563EB?style=for-the-badge&logo=readthedocs&logoColor=white)](docs/WORKFLOW.md)
@@ -98,6 +96,7 @@ Please cite the [arXiv paper](https://arxiv.org/abs/2610.10479). Machine-readabl
   eprint={2610.10479},
   archivePrefix={arXiv},
   primaryClass={cs.RO},
+  doi={10.48550/arXiv.2610.10479},
   url={https://arxiv.org/abs/2610.10479}
 }
 ```

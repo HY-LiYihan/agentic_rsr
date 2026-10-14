@@ -6,9 +6,17 @@
   <meta name="description" content="Agentic RSR: task-linked scene reconstruction, execution-grounded robot policies, and real-robot transfer.">
   <meta property="og:title" content="Agentic RSR">
   <meta property="og:description" content="Real-to-Sim-to-Real through Scene Reconstruction and Execution-Grounded Robot Policies">
-  <meta property="og:image" content="https://hy-liyihan.github.io/agentic_rsr/assets/overview.png">
+  <meta property="og:image" content="https://agentic-rsr.github.io/assets/overview.png">
+  <meta property="og:url" content="https://agentic-rsr.github.io/">
   <meta name="theme-color" content="#126a50">
   <title>Agentic RSR | Real-to-Sim-to-Real</title>
+  <link rel="icon" type="image/svg+xml" href="assets/rsr-black-disc.svg">
+  <link rel="canonical" href="https://agentic-rsr.github.io/">
+  <script>
+    if (location.hostname === 'hy-liyihan.github.io' && location.pathname.startsWith('/agentic_rsr_private')) {
+      location.replace('https://agentic-rsr.github.io/');
+    }
+  </script>
   <link rel="stylesheet" href="site.css">
   <script src="site.js" defer></script>
   <noscript><style>[role="tabpanel"][hidden] { display: block !important; } .tabs { display: none; }</style></noscript>
@@ -24,22 +32,42 @@
   </header>
   <main id="main">
     <section class="masthead">
-      <p class="eyebrow">Research preprint · 2026</p>
       <h1>Agentic RSR: Real-to-Sim-to-Real through Scene Reconstruction and Execution-Grounded Robot Policies</h1>
-      <p class="authors">Yihan Li<sup>1,†</sup> · Yating Feng<sup>2</sup> · Shengjiu Sun<sup>1</sup> · Jianing Chen<sup>1</sup> · Hao Ren<sup>1</sup><br>
-      Bowen Yang<sup>2</sup> · Weisheng Xu<sup>2</sup> · Qiwei Wu<sup>2</sup> · Hui Cheng<sup>1</sup> · Renjing Xu<sup>2,†</sup></p>
+      <p class="authors">Yihan Li<sup>1,2,*,†</sup> · Yating Feng<sup>1,*</sup> · Shengjiu Sun<sup>2</sup> · Jianing Chen<sup>2</sup> · Hao Ren<sup>2</sup><br>
+      Bowen Yang<sup>1</sup> · Weisheng Xu<sup>1</sup> · Qiwei Wu<sup>1</sup> · Hui Cheng<sup>2</sup> · Renjing Xu<sup>1,†</sup></p>
       <div class="affiliations">
-        <a href="https://www.sysu.edu.cn/" aria-label="Sun Yat-sen University"><img src="assets/sysu-logo.png" width="500" height="144" alt="Sun Yat-sen University"></a>
-        <a href="https://www.hkust-gz.edu.cn/" aria-label="The Hong Kong University of Science and Technology Guangzhou"><img src="assets/hkust-gz-logo.png" width="566" height="108" alt="The Hong Kong University of Science and Technology (Guangzhou)"></a>
+        <a href="https://www.hkust-gz.edu.cn/" aria-label="The Hong Kong University of Science and Technology Guangzhou"><img src="assets/hkust-gz-logo.png" width="566" height="108" alt=""><span><sup>1</sup> HKUST (Guangzhou)</span></a>
+        <a href="https://www.sysu.edu.cn/" aria-label="Sun Yat-sen University"><img src="assets/sysu-logo.png" width="500" height="144" alt=""><span><sup>2</sup> Sun Yat-sen University</span></a>
+        <span class="lab-mark"><img src="assets/hcl-lab-logo-trimmed.png" width="558" height="767" alt="HCL Lab — Humanoid Computing Lab"></span>
       </div>
-      <p class="correspondence"><sup>1</sup> Sun Yat-sen University · <sup>2</sup> HKUST (Guangzhou) · † Corresponding authors</p>
-      <div class="resources"><a href="https://arxiv.org/abs/2610.10479">Paper (arXiv) ↗</a><a href="assets/paper.pdf">Local PDF ↗</a><a href="https://github.com/HY-LiYihan/agentic_rsr">Source code ↗</a><a href="https://github.com/HY-LiYihan/agentic_rsr/blob/master/docs/WORKFLOW.md">Workflow ↗</a><a href="https://github.com/HY-LiYihan/agentic_rsr/blob/master/CITATION.cff">Citation file ↗</a><a href="#citation">Cite</a></div>
+      <p class="correspondence">* Equal contribution (co-first authors) · † Corresponding authors</p>
+      <div class="resources" role="group" aria-label="Project resources">
+        <a href="https://arxiv.org/abs/2610.10479"><img class="resource-monochrome" src="assets/icons/arxiv.svg" width="20" height="20" alt=""><span>arXiv</span></a>
+        <a href="https://github.com/HY-LiYihan/agentic_rsr"><img class="resource-monochrome" src="assets/icons/github.svg" width="20" height="20" alt=""><span>Source Code</span></a>
+        <a href="#citation"><img class="resource-monochrome" src="assets/icons/quote.svg" width="20" height="20" alt=""><span>Cite</span></a>
+        <a href="https://huggingface.co/datasets/HY-LiYihan/Agentic-RSR-experiment-results-20261007"><img src="assets/icons/huggingface.svg" width="22" height="22" alt=""><span>Dataset</span></a>
+      </div>
     </section>
     <section id="overview" class="section overview">
       <figure>
         <a class="figure-link" href="assets/overview.png" data-figure><img src="assets/overview.png" width="1878" height="970" alt="Agentic RSR cycle: real observations, robot alignment, scene modeling, physics verification, simulation policies, and experience transfer."></a>
         <figcaption>From a workspace video to a task-linked simulation, executable policy, and feedback-driven real-robot adaptation.</figcaption>
       </figure>
+      <div class="video-comparison" id="drawer-comparison" style="--reveal: 50%">
+        <div class="comparison-heading"><h2>From real to simulation</h2><span>White drawer · Astra / DSH</span></div>
+        <div class="comparison-stage" aria-label="White drawer real and simulated video comparison">
+          <video id="comparison-real" src="assets/comparison/drawer-real-loop.mp4" autoplay loop muted playsinline preload="auto" poster="assets/comparison/drawer-real.jpg" aria-label="Original white drawer animation"></video>
+          <video id="comparison-sim" class="comparison-sim" src="assets/comparison/drawer-sim-loop.mp4" autoplay loop muted playsinline preload="auto" poster="assets/comparison/drawer-sim.jpg" aria-label="Astra DSH white drawer reconstruction animation"></video>
+          <div class="comparison-line" aria-hidden="true"></div>
+        </div>
+        <div class="comparison-controls">
+          <span class="comparison-endpoint">Real</span>
+          <input id="comparison-reveal" type="range" min="0" max="100" step="0.1" value="50" aria-label="Real to simulation reveal" aria-valuetext="Real 50%, SIM 50%">
+          <span class="comparison-endpoint">SIM</span>
+        </div>
+        <p id="comparison-status" class="comparison-status" role="status" hidden></p>
+        <noscript><p><a href="assets/comparison/drawer-real-loop.mp4">Real animation</a> · <a href="assets/comparison/drawer-sim-loop.mp4">SIM animation</a></p></noscript>
+      </div>
       <div class="abstract"><h2>One task, from reconstruction to execution.</h2><p>Agentic RSR connects scene reconstruction and policy development through the same manipulation task. Known robot geometry anchors metric scale; visual feedback refines the scene; MuJoCo checks task-relevant interactions. A coding agent develops policies through privileged, visual, and randomized simulation. Observations, actions, and experience then carry to the real robot through a shared task-level interface.</p></div>
     </section>
     <section id="results" class="section">
@@ -80,11 +108,12 @@ uv run --no-sync real2sim-models check</code></pre>
   eprint={2610.10479},
   archivePrefix={arXiv},
   primaryClass={cs.RO},
+  doi={10.48550/arXiv.2610.10479},
   url={https://arxiv.org/abs/2610.10479}
 }</code></pre><p id="copy-status" role="status" aria-live="polite"></p>
     </section>
   </main>
-  <footer><span>Agentic RSR · Sun Yat-sen University &amp; HKUST (Guangzhou)</span><a href="ASSET_SOURCES.md">Media sources &amp; attribution</a></footer>
+  <footer><span>Agentic RSR · HKUST (Guangzhou) &amp; Sun Yat-sen University</span><a href="ASSET_SOURCES.md">Media sources &amp; attribution</a></footer>
   <dialog id="figure-dialog" aria-label="Full-size paper figure"><button type="button" id="close-figure" aria-label="Close figure" title="Close figure">×</button><img id="expanded-figure" alt=""></dialog>
 </body>
 </html>

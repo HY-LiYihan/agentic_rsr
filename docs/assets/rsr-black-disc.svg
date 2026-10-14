@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">RSR Black Disc</title>
+  <desc id="desc">White RSR letters centered in a plain black circle.</desc>
+  <circle cx="256" cy="256" r="210" fill="#000"/>
+  <g fill="none" stroke="#fff" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M91 360V152h55c32 0 52 18 52 45s-20 45-52 45H91m55 0 56 118"/>
+    <path d="M317 178c-14-16-33-26-54-26-31 0-51 17-51 41 0 23 16 36 47 44l28 8c30 9 45 24 45 49 0 29-24 50-58 50-26 0-48-10-64-28"/>
+    <path d="M333 360V152h54c32 0 52 18 52 45s-20 45-52 45h-54m54 0 56 118"/>
+  </g>
+</svg>

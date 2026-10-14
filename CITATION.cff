@@ -8,7 +8,7 @@ abstract: >-
 authors:
   - family-names: Li
     given-names: Yihan
-    affiliation: Sun Yat-sen University
+    affiliation: HKUST (Guangzhou); Sun Yat-sen University
   - family-names: Feng
     given-names: Yating
     affiliation: HKUST (Guangzhou)
@@ -73,6 +73,7 @@ preferred-citation:
       given-names: Renjing
   year: 2026
   journal: arXiv
+  doi: 10.48550/arXiv.2610.10479
   url: https://arxiv.org/abs/2610.10479
   identifiers:
     - type: other

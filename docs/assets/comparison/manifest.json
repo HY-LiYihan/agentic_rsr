@@ -1,0 +1,25 @@
+{
+  "task": "close_drawer",
+  "robot": "franka",
+  "model": "gpt-6-astra",
+  "backend": "dsh",
+  "source_frame_count": 198,
+  "loop_frame_count": 394,
+  "source_max_timestamp_error_seconds": 0.0,
+  "preprocessing": "1280x720 H.264, silent, constant 30000/1001 fps, original speed, forward then reverse without repeated endpoints",
+  "note": "Static model-specific Stage2 geometry rendered with globally aligned full-frame VGGT cameras. Robot and object motion are not reconstructed.",
+  "videos": {
+    "real": {
+      "source": "close_drawer.mp4",
+      "source_sha256": "7045f7466752965d81d933c8f849b8133f5b06c30cbf460b54b224afbd4174e4",
+      "file": "drawer-real-loop.mp4",
+      "sha256": "f5e4364b06d9e9b6069b8f874aebb28048f1b1f7d4eacf69ec54f03b92da19d4"
+    },
+    "sim": {
+      "source": "aligned.mp4",
+      "source_sha256": "4bd47523cf61b2778232af07e11701c50da31976b29ca0548d4456107e0b14bb",
+      "file": "drawer-sim-loop.mp4",
+      "sha256": "fa0ed42d19ec9325c12cc351b64d88b6d30c9c63fc4dd96f7cc16fa874e1288a"
+    }
+  }
+}
